@@ -67,6 +67,7 @@ footer{
     align-items: center;
     text-align: center;
     margin-top: 12px;
+    margin-bottom: 12px;
 }
 #infoFooterMenu{
     display: flex;
