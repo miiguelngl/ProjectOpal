@@ -52,6 +52,7 @@ nav{
     display: none;
 }
 
+
 /* -- FOOTER -- */
 footer{
     height: auto;
@@ -97,7 +98,9 @@ footer{
     font-family: var(--karla);
 }
 
-
+#marcas{
+    background-color: var(--tercer);
+}
 /* -- RESPONSIVE -- */
 @media only screen and (max-width: 600px){
 
@@ -106,7 +109,7 @@ footer{
 
 }
 
-@media only screen and (min-width: 901px){
+@media only screen and (min-width: 960px){
     /* -- HEADER -- */
     #buscador {
         font-size: 14px; 
