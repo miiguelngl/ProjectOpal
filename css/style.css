@@ -10,6 +10,7 @@
     --karla: 'Karla', sans-serif;
 }
 
+/* -- HEADER -- */
 header{
     background-color: var(--principal);
 }
@@ -52,6 +53,25 @@ nav{
     display: none;
 }
 
+#menu{
+    background-color: var(--tercer);
+    justify-content: space-evenly;
+    padding: 8px;
+}
+
+#menu a{
+    text-decoration: none;
+    color: var(--letra3);
+    font-family: var(--exo2);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+/* -- SECTION -- */
+#marcas{
+    background-color: var(--tercer);
+}
 
 /* -- FOOTER -- */
 footer{
@@ -69,19 +89,24 @@ footer{
     margin-top: 12px;
     margin-bottom: 12px;
 }
-#infoFooterMenu{
-    display: flex;
-    flex-direction: column;
-}
+
 .infoFooter h3{
     text-transform: uppercase;
     color: var(--tercer);
     font-family: var(--exo2);
     font-size: 20px;
 }
-#infoFooterMenu a{
+.infoFooter div p {
+    font-family: var(--karla);
+}
+.infoFooterMenu{
+    display: flex;
+    flex-direction: column;
+}
+.infoFooterMenu a{
     color: var(--secundario);
     text-decoration: none;
+    font-family: var(--karla);
 }
 .social-media{
     text-align: center;
@@ -99,9 +124,7 @@ footer{
     font-family: var(--karla);
 }
 
-#marcas{
-    background-color: var(--tercer);
-}
+
 /* -- RESPONSIVE -- */
 @media only screen and (max-width: 600px){
 
@@ -126,6 +149,9 @@ footer{
     }
     #registroButtonPC{
         display: block;
+    }
+    #menu a{
+        font-size: 16px;
     }
     /* FOOTER */
     .infoFooter{
