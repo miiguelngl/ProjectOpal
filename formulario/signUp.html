@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/signIn.css">
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <title>Opal</title>
+</head>
+<body>
+    <main>
+        <div id="formulario">
+            <a href="../index.html"><img src="../img/LogoOpal.png" alt="" height="100px"></a>
+            <div class="signin-form">
+                <h2>Crear cuenta</h2>
+                <form method="POST" class="register-form" id="register-form">
+                    <div class="datosLogIn">
+                        <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                        <input type="text" name="name" id="name" placeholder="Username"/>
+                    </div>
+                    <div class="datosLogIn">
+                        <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                        <input type="text" name="name" id="name" placeholder="Tu nombre"/>
+                    </div>
+                    <div class="datosLogIn">
+                        <label for="email"><i class="zmdi zmdi-email"></i></label>
+                        <input type="email" name="email" id="email" placeholder="Email"/>
+                    </div>
+                    <div class="datosLogIn">
+                        <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                        <input type="password" name="pass" id="pass" placeholder="Contraseña"/>
+                    </div>
+                    <div class="datosLogIn">
+                        <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                        <input type="password" name="re_pass" id="re_pass" placeholder="Repite tu contraseña"/>
+                    </div>
+                    <div id="remember">
+                        <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                        <label for="agree-term" id="terminos">Estoy de acuerdo con los  <a href="#" class="term-service">Terminos y condiciones</a></label>
+                    </div>
+                    <div class="form-button">
+                        <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
+                    </div>
+                    <a href="signIn.html" class="signup-image-link">Ya tengo cuenta</a>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
