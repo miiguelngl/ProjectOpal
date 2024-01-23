@@ -68,11 +68,6 @@ nav{
     font-size: 12px;
 }
 
-/* -- SECTION -- */
-#marcas{
-    background-color: var(--tercer);
-}
-
 /* -- FOOTER -- */
 footer{
     height: auto;
