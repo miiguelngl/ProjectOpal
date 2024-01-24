@@ -32,6 +32,7 @@ nav{
     box-sizing: border-box;
     font-size: 14px; 
     padding: 8px; 
+    margin-bottom: 0px;
 }
 
 #registroButton{
@@ -61,7 +62,7 @@ nav{
 
 #menu a{
     text-decoration: none;
-    color: var(--letra3);
+    color: var(--principal);
     font-family: var(--exo2);
     text-transform: uppercase;
     font-weight: 600;
