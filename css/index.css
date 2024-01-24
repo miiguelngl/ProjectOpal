@@ -10,38 +10,45 @@
     --karla: 'Karla', sans-serif;
 }
 
-/* -- SECTION -- */
-#sobreNosotros{
-    background-color: var(--secundario) !important;
-    padding: 18px;
-    height: 500px;
-}
-#sobreNosotros .container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-#sobreNosotrosFotos{
-    display: flex;
-    flex-direction: row;
-}
-#sobreNosotrosFotos img{
-    border-radius: 22px;
-}
-#foto1{
-    position: relative;
-    top: 100px;
-    left: 80px;
-}
-#sobreNosotrosInfo{
+/* SHOP */
+.shop, .shopInfo{
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-around;
-    text-align: right;
-    width: 500px;
+}
+.shop{
+    height: 450px;
+}
+.shopInfo h2{
+    font-family: var(--exo2);
+    font-weight: 700;
+    color: var(--secundario);
+}
+.shopInfo a{
+    text-decoration: none;
+    font-family: var(--karla);
+    font-weight: 600;
+    color: var(--secundario);
+}
+
+/* SECTION */
+#sobreNosotros{
+    background-image: url(../img/sobreNosotros1.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top: 4px solid var(--secundario);
+    border-bottom: 4px solid var(--secundario);
+}
+#sobreNosotrosInfo{
     height: 400px;
-    margin-top: 38px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgba(29, 29, 29, 0.742);
 }
 #sobreNosotrosInfo h2{
     color: var(--principal);
@@ -53,7 +60,9 @@
     color: #d8dddb !important;
     font-family: var(--karla);
     font-weight: 200;
-    font-size: 18px;
+    font-size: 16px;
+    padding: 4px;
+    text-align: center;
 }
 #sobreNosotrosInfo button{
     padding: 10px;
@@ -70,6 +79,11 @@
     text-decoration: none;
     font-weight: 600;
 }
+
+#sobreNosotrosPC{
+    display: none;
+}
+
 #marcas{
     background-color: var(--tercer);
 }
@@ -83,5 +97,70 @@
 }
 
 @media only screen and (min-width: 960px){
-
+    /* -- SECTION -- */
+    #sobreNosotrosPC{
+        background-color: var(--secundario) !important;
+        padding: 18px;
+        height: 500px;
+    }
+    #sobreNosotrosPC .container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    #sobreNosotrosPCFotos{
+        display: flex;
+        flex-direction: row;
+    }
+    #sobreNosotrosPCFotos img{
+        border-radius: 22px;
+    }
+    #foto1{
+        position: relative;
+        top: 100px;
+        left: 80px;
+    }
+    #sobreNosotros{
+        display: none;
+    }
+    #sobreNosotrosPC{
+        display: block;
+    }
+    #sobreNosotrosPCInfo{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-around;
+        text-align: right;
+        width: 500px;
+        height: 400px;
+        margin-top: 38px;
+    }
+    #sobreNosotrosPCInfo h2{
+        color: var(--principal);
+        font-family: var(--exo2);
+        font-weight: 700;
+        text-transform: capitalize;
+    }
+    #sobreNosotrosPCInfo p{
+        color: #d8dddb !important;
+        font-family: var(--karla);
+        font-weight: 200;
+        font-size: 18px;
+    }
+    #sobreNosotrosPCInfo button{
+        padding: 10px;
+        padding-left: 18px;
+        padding-right: 18px;
+        background-color: var(--tercer);
+        border-radius: 25px;
+        border: 0px;
+    }
+    #sobreNosotrosPCInfo button a{
+        color: var(--principal);
+        font-family: var(--exo2);
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: 600;
+    }
 }
