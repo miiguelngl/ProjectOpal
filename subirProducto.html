@@ -43,7 +43,7 @@
         <div class="container">
             <h2>Subir producto</h2>
             <div class="case">
-                <form action="procesar_formulario.php" method="post" enctype="multipart/form-data">
+                <form action="procesar_formulario.php" method="post" enctype="multipart/form-data" name="fProducto">
                     <label for="nombre">Nombre de la Zapatilla:</label>
                     <input type="text" id="nombre" name="nombre" placeholder="Nombre..." required>
                 
@@ -57,7 +57,7 @@
                     </select>
                 
                     <label for="descripcion">Descripción del Estado del Producto:</label>
-                    <textarea id="descripcion" name="descripcion" rows="4" placeholder="Descripción de las sneakers..." required></textarea>
+                    <textarea id="descripcion" name="descripcion" rows="4" maxlength="400" placeholder="Descripción de las sneakers..." required></textarea>
                 
                     <label for="foto">Foto de la Zapatilla:</label>
                     <input type="file" id="foto" name="foto" accept="image/*" required>
@@ -114,5 +114,6 @@
             <p>© Copyright Opal 2024. All rights reserved. Privacy Policy - Legal Notice - Conditions of Sale and Withdrawal.</p>
         </div>
     </footer>
+    <script src="js/formularioProducto.js"></script>
 </body>
 </html>
