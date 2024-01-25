@@ -10,6 +10,29 @@
     --karla: 'Karla', sans-serif;
 }
 
+/* -- SLIDER -- */
+#imgSlider1, #imgSlider2, #imgSlider3{
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+#imgSlider1{
+    background-image: url(../img/slider1.jpg);
+}
+#imgSlider2{
+    background-image: url(../img/slider2.jpg);
+}
+#imgSlider3{
+    background-image: url(../img/slider3.jpg);
+}
+.imgSliderCapa{
+    background-color: rgba(29, 29, 29, 0.742);
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
 /* SHOP */
 .shop, .shopInfo{
     display: flex;

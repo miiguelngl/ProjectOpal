@@ -9,36 +9,55 @@
     --exo2: 'Exo 2', sans-serif;
     --karla: 'Karla', sans-serif;
 }
+
 body{
     font-family: var(--karla);
 }
-h2{
+
+/* -- MAIN -- */
+h2, h3{
     font-family: var(--exo2);
     margin-top: 12px;
     margin-bottom: 12px;
     color: var(--tercer);
+}
+h2{
     font-weight: 700;
 }
-.case{
+h3{
+    font-weight: 600;
+}
+
+#caseContact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+}
+#caseContactInfo{
+    padding: 4px;
+}
+#formularioContacto{
     background-color: var(--principal);
     border-radius: 25px;
+    padding: 16px;
     width: 100%;
-    padding: 18px;
-    margin-bottom: 12px;
 }
-.case form{
+#formularioContacto form{
     display: flex;
     flex-direction: column;
 }
+
+/* -- FORMULARIO -- */
 label{
     margin-bottom: 4px;
-    font-size: 20px;
+    font-family: var(--exo2);
+    font-weight: 500;
 }
 input, textarea, select{
     margin-bottom: 8px;
     border-radius: 12px;
     border: 0px;
-    font-size: 18px;
 }
 textarea{
     resize: none;
@@ -47,12 +66,9 @@ textarea{
 input{
     padding: 4px;
 }
-#foto{
-    border-radius: 0px;
-}
 #enviar{
     background-color: var(--tercer);
-    color: var(--letra3);
+    color: var(--principal);
     font-weight: 700;
     width: 25%;
     margin: auto;
@@ -68,5 +84,16 @@ input{
 }
 
 @media only screen and (min-width: 960px){
-    
+    #caseContact{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 24px;
+    }
+    #caseContactInfo{
+        width: 50%;
+    }
+    #formularioContacto{
+        width: 50%;
+    }
 }

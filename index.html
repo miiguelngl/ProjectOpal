@@ -9,23 +9,37 @@
     <link href="css/carousel.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/index.css">
+    <script defer src="js/menuDesplegable.js"></script>
     <title>Opal</title>
 </head>
 <body>
     <header>
         <nav>
+            <div id="header-menu-movil">
+                <button id="botonMenu">
+                    <img src="img/menu.png" alt="Logo de Pepote">
+                </button>
+                <nav id="header-menu-nav">
+                    <ul>
+                        <li><a href="">Tienda</a></li>
+                        <li><a href="subirProducto.html">Subir producto</a></li>
+                        <li><a href="">Sobre nosotros</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
             <div>
                 <a href="index.html">
                     <img src="img/LogoOpal.png" alt="Logo de Opal" height="80px">
                 </a>
             </div>
-            <div>
+            <div id="cajaBuscador">
                 <input type="text" placeholder="Buscar sneakers..." id="buscador">
             </div>
             <div>
                 <button id="registroButton">
-                    <a href="/formulario/signIn.html" id="registroButtonPC">Iniciar sesión/Registrarse</a>
-                    <a href="/formulario/signIn.html" id="registroButtonMobile">
+                    <a href="formulario/IniciarSesion/signIn.html" id="registroButtonPC">Iniciar sesión/Registrarse</a>
+                    <a href="formulario/IniciarSesion/signIn.html" id="registroButtonMobile">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
                             <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
                         </svg>
@@ -49,29 +63,32 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active" id="imgSlider1">
+                    <div class="imgSliderCapa"></div>
                     <div class="container">
                       <div class="carousel-caption text-start">
-                        <h2>Customized solutions.</h2>
-                        <p class="opacity-75">We offer personalized solutions that adapt to your needs, carrying out projects from the conceptual phase to flawless execution.</p>
-                        <p><a class="btn btn-lg btn-dark" href="#">Know more</a></p>
+                        <h2>Tu Destino para el Estilo Único.</h2>
+                        <p class="opacity-75">En Opal, no solo vendemos zapatillas de marca, sino que ofrecemos una experiencia única centrada en el estilo personal de cada cliente.</p>
+                        <p><a class="btn btn-lg btn-dark" href="tienda.html">Visitar tienda</a></p>
                       </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="imgSlider2">
+                    <div class="imgSliderCapa"></div>
                     <div class="container">
                         <div class="carousel-caption">
-                          <h2>We merge creativity with functionality.</h2>
-                          <p class="opacity-75">With a passion for design and a fresh perspective, our team of talented creators strive to exceed expectations.</p>
-                            <p><a class="btn btn-lg btn-dark" href="#">Know more</a></p>
+                          <h2>Servicios de Compra y Venta.</h2>
+                          <p class="opacity-75">Entendemos que cada cliente es único, y así es como tratamos cada transacción. Nuestro servicio de compra y venta personalizado te permite encontrar las zapatillas que se adaptan a tus gustos y necesidades específicas.</p>
+                            <p><a class="btn btn-lg btn-dark" href="subirProducto.html">Subir producto</a></p>
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item" id="imgSlider3">
+                    <div class="imgSliderCapa"></div>
                     <div class="container">
                         <div class="carousel-caption text-end">
-                            <h2>Ready to take your project to the next level?</h2>
-                            <p>Contact us for an initial consultation and find out how we can make your vision shine.</p>
-                            <p><a class="btn btn-lg btn-dark" href="#">Contact us</a></p>
+                            <h2>Tu Satisfacción es Nuestra Prioridad.</h2>
+                            <p>En Opal, la satisfacción del cliente es nuestra máxima prioridad. Nos esforzamos por ofrecer un servicio impecable desde el momento en que exploras nuestro catálogo hasta que recibes tus zapatillas en la puerta de tu hogar.</p>
+                            <p><a class="btn btn-lg btn-dark" href="#">Contáctanos</a></p>
                         </div>
                     </div>
                 </div>
