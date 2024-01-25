@@ -53,22 +53,65 @@ nav{
 #registroButtonPC{
     display: none;
 }
-
+#cajaBuscador{
+    display: none;
+}
 #menu{
-    background-color: var(--tercer);
+    /* background-color: var(--tercer);
     justify-content: space-evenly;
-    padding: 8px;
+    padding: 8px; */
+    display: none;
 }
 
-#menu a{
+/* #menu a{
     text-decoration: none;
     color: var(--principal);
     font-family: var(--exo2);
     text-transform: uppercase;
     font-weight: 600;
     font-size: 12px;
-}
+} */
 
+/* -- MENU DESPLEGABLE -- */
+
+#botonMenu {
+    background-color: transparent;
+    border: 0px;
+} 
+#botonMenu:focus {
+    outline: none;
+}
+#botonMenu:focus + #header-menu-nav {
+    transform: translateX(0rem);
+}
+#header-menu-nav {
+    border-right: 2px solid var(--secundario);
+    position: fixed;
+    z-index: 40;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 15rem;
+    background-color: var(--tercer);
+    transform: translateX(-15rem);
+    transition: 1s all;
+}
+#header-menu-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#header-menu-nav a {
+    display: block;
+    color: var(--principal);
+    padding: 1rem;
+    transition: .5s all;
+    text-align: center;
+    text-decoration: none;
+    font-family: var(--exo2);
+    font-weight: 700;
+    text-transform: uppercase;
+}
 /* -- FOOTER -- */
 footer{
     height: auto;
@@ -146,7 +189,24 @@ footer{
     #registroButtonPC{
         display: block;
     }
+    #cajaBuscador{
+        display: block;
+    }
+    #header-menu-movil{
+        display: none;
+    }
+    #menu{
+        background-color: var(--tercer);
+        justify-content: space-evenly;
+        padding: 8px;
+        display: flex;
+    }
     #menu a{
+        text-decoration: none;
+        color: var(--principal);
+        font-family: var(--exo2);
+        text-transform: uppercase;
+        font-weight: 600;
         font-size: 16px;
     }
     /* FOOTER */
