@@ -2,7 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const botonMenu = document.getElementById('botonMenu');
     const menuNav = document.getElementById('header-menu-nav');
 
-    botonMenu.addEventListener('click', () => {
+    botonMenu.addEventListener('click', (ev) => {
+        ev.stopImmediatePropagation();
         menuNav.classList.toggle('mostrar-menu');
     });
     document.addEventListener('click', (event) => {
