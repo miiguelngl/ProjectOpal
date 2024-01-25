@@ -63,27 +63,13 @@ nav{
     display: none;
 }
 
-/* #menu a{
-    text-decoration: none;
-    color: var(--principal);
-    font-family: var(--exo2);
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 12px;
-} */
-
 /* -- MENU DESPLEGABLE -- */
 
 #botonMenu {
     background-color: transparent;
     border: 0px;
 } 
-#botonMenu:focus {
-    outline: none;
-}
-#botonMenu:focus + #header-menu-nav {
-    transform: translateX(0rem);
-}
+
 #header-menu-nav {
     border-right: 2px solid var(--secundario);
     position: fixed;
@@ -96,6 +82,11 @@ nav{
     transform: translateX(-15rem);
     transition: 1s all;
 }
+#header-menu-nav.mostrar-menu {
+    transform: translateX(0);
+    transition: 1s all;
+}
+
 #header-menu-nav ul {
     margin: 0;
     padding: 0;
