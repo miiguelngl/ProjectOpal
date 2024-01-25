@@ -1,13 +1,21 @@
 <?php
+//Inicia sesion
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
 session_start();
+
+//Mostrar errores 
+
+//Si el método es POST entonces recoge los datos
 if ($_SERVER['REQUEST_METHOD'] == "POST"){
     //Recoge datos form
     $usuario = $_POST["nickname"];
     $nombre = $_POST["name"];
     $apellidos = $_POST["subname"];
     $email = $_POST["email"];
-    $contraseña = password_hash($_POST["password"], PASSWORD_DEFAULT);
-
+    $contrasena = password_hash($_POST["pass"], PASSWORD_DEFAULT);
+    
     //Conexion BBDD
     $servidor = "localhost";
     $username = "OpalAdmin";
@@ -16,15 +24,17 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
     $conexion = new mysqli($servidor, $username, $password, $base);
 
+    
     //Conseguir el ID de Usuario
-    $idUsu = intval($conexion->query("SELECT COUNT(*) FROM Usuario"))+1;
-
+    $idUsu = (mysqli_fetch_array($conexion->query("SELECT COUNT(*) FROM Usuario"))[0]+1);
+    
     //Comprobaciones antes de enviar datos
     //Comprueba que el USERNAME no exista en la BBDD;
-    $comprobacionUsu = "SELECT * FROM Usuario WHERE Apodo = $usuario";
+    $comprobacionUsu = "SELECT * FROM `Usuario` WHERE `Apodo` = '$usuario'";
     $resultadoUsu = $conexion->query($comprobacionUsu);
+    
     //Comprueba que el CORREO no exista en la BBDD;
-    $comprobacionEmail = "SELECT * FROM Usuario WHERE Correo = $email";
+    $comprobacionEmail = "SELECT * FROM `Usuario` WHERE `Correo` = '$email'";
     $resultadoEmail = $conexion->query($comprobacionEmail);
 
     if ($conexion->connect_error) {
@@ -32,23 +42,23 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     }
     //Si resultadoUsu devuelve alguna fila significa que ya existe un usuario con ese apodo
     if ($resultadoUsu->num_rows > 0){
-        echo "El nombre de usuario ya está en uso";
+        echo "El nombre de usuario no está disponible";
         //Si resultadoEmail devuelve alguna fila significa que ya existe un usuario con ese email
     }else if ($resultadoEmail->num_rows > 0){
         echo "El correo electrónico de usuario ya está en uso";
     }else{
-        $consulta = "INSERT INTO `Usuario` (Apodo, Nombre, Apellidos, Correo, Contraseña, IdUsuario, Admin ) VALUES ($usuario, $nombre, $apellidos, $email, $contraseña, $idUsu, 0)";
 
-        if($conexion->query($consulta) === TRUE) {
+        $consulta = "INSERT INTO `Usuario` (Apodo, Nombre, Apellidos, Correo, Contraseña, IdUsuario, Admin) VALUES ('$usuario', '$nombre', '$apellidos', '$email', '$contrasena', $idUsu, 0)";
+        if ($conexion->query($consulta) === TRUE) {
             echo "Datos insertados correctamente";
-            $_SESSION["apodo"] = $usuario;
-
+            $_SESSION["Usu"] = $usuario;
+            header("Location: ../../index.html");
             exit();
-        }else{
-            echo "Error al insertar datos: ". $conexion->error;
+        } else {
+            echo "Error al insertar datos: " /*. $conexion->error*/;
         }
+
         $conexion->close();
-        session_destroy();
     }
 }
 ?>
