@@ -18,7 +18,9 @@ h2{
     margin-bottom: 12px;
     color: var(--tercer);
     font-weight: 700;
-    margin-left: 18px;
+}
+h5{
+    font-size: 18px;
 }
 .case{
     background-color: var(--principal);
@@ -26,47 +28,19 @@ h2{
     width: 100%;
     padding: 18px;
     margin-bottom: 26px;
+    margin-top: 26px;
 }
-.case form{
+.caseProfile{
+    margin: 16px;
     display: flex;
     flex-direction: column;
 }
-label{
-    margin-bottom: 4px;
-    font-size: 20px;
+.caseProfile img{
+    border-radius: 50%;
+    height: 200px;
 }
-input, textarea, select{
-    margin-bottom: 8px;
-    border-radius: 12px;
-    border: 0px;
-    font-size: 18px;
-}
-textarea{
-    resize: none;
-    padding: 4px;
-}
-input{
-    padding: 4px;
-}
-#foto{
-    border-radius: 0px;
-}
-#enviar{
-    background-color: var(--tercer);
-    color: var(--letra3);
-    font-weight: 700;
-    width: 25%;
-    margin: auto;
-    margin-top: 8px;
-}
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-input[type="number"] {
-    -moz-appearance: textfield;
+.caseProfile-Info{
+    margin-left: 18px;
 }
 /* -- RESPONSIVE -- */
 @media only screen and (max-width: 600px){
@@ -77,5 +51,11 @@ input[type="number"] {
 }
 
 @media only screen and (min-width: 960px){
-    
+    h5{
+        font-size: 20px;
+    }
+    .caseProfile{
+        display: flex;
+        flex-direction: row;
+    }
 }

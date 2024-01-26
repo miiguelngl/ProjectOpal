@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/subirProducto.css">
+    <link rel="stylesheet" href="css/profile.css">
     <script defer src="js/menuDesplegable.js"></script>
     <title>Opal</title>
 </head>
@@ -56,32 +56,17 @@
     </header>
     <main>
         <div class="container">
-            <h2>Subir producto</h2>
             <div class="case">
-                <form action="procesar_formulario.php" method="post" enctype="multipart/form-data" name="fProducto">
-                    <label for="nombre">Nombre de la Zapatilla:</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Nombre..." required>
-                
-                    <label for="marca">Marca de la Zapatilla:</label>
-                    <select id="marca" name="marca" required>
-                        <option value="Nike">Nike</option>
-                        <option value="Adidas">Adidas</option>
-                        <option value="New Balance">New Balance</option>
-                        <option value="Converse">Converse</option>
-                        <option value="Vans">Vans</option>
-                    </select>
-                
-                    <label for="descripcion">Descripción del Estado del Producto:</label>
-                    <textarea id="descripcion" name="descripcion" rows="4" maxlength="400" placeholder="Descripción de las sneakers..." required></textarea>
-                
-                    <label for="foto">Foto de la Zapatilla:</label>
-                    <input type="file" id="foto" name="foto" accept="image/*" required>
-                
-                    <label for="precio">Precio Sugerido:</label>
-                    <input type="number" id="precio" name="precio" placeholder="No te pases..." required>
-                
-                    <input type="submit" id="enviar" value="Enviar">
-                </form>
+                <div class="caseProfile">
+                    <img src="img/pabloMotos.jpeg" alt="Foto de perfil">
+                    <div class="caseProfile-Info">
+                        <h2>PabloElMotorista69</h2>
+                        <h5>Nombre: <span>Pablo</span></h5>
+                        <h5>Apellidos: <span>Motos</span></h5>
+                        <h5>Correo: <span>pablogymrat@gmail.com</span></h5>
+                    </div>
+                </div>
+                <h2>Productos en venta</h2>
             </div>
         </div>
     </main>

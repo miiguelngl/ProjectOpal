@@ -32,6 +32,20 @@ nav{
     box-sizing: border-box;
     font-size: 14px; 
     padding: 8px; 
+    margin-bottom: 0px;
+}
+#buscadorMovil{
+    margin-top: 6px;
+    background-color: var(--principal);
+    color: var(--secundario);
+    border: 2px solid var(--secundario);
+    border-radius: 25px;
+    width: 100%; 
+    font-family: var(--karla);
+    box-sizing: border-box;
+    font-size: 14px; 
+    padding: 8px; 
+    margin-bottom: 0px;
 }
 
 #registroButton{
@@ -52,22 +66,56 @@ nav{
 #registroButtonPC{
     display: none;
 }
-
+#cajaBuscador{
+    display: none;
+}
 #menu{
-    background-color: var(--tercer);
+    /* background-color: var(--tercer);
     justify-content: space-evenly;
-    padding: 8px;
+    padding: 8px; */
+    display: none;
 }
 
-#menu a{
+/* -- MENU DESPLEGABLE -- */
+
+#botonMenu {
+    background-color: transparent;
+    border: 0px;
+} 
+
+#header-menu-nav {
+    border-right: 2px solid var(--secundario);
+    position: fixed;
+    z-index: 40;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 15rem;
+    background-color: var(--tercer);
+    transform: translateX(-15rem);
+    transition: 1s all;
+}
+#header-menu-nav.mostrar-menu {
+    transform: translateX(0);
+    transition: 1s all;
+}
+
+#header-menu-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#header-menu-nav a {
+    display: block;
+    color: var(--principal);
+    padding: 1rem;
+    transition: .5s all;
+    text-align: center;
     text-decoration: none;
-    color: var(--letra3);
     font-family: var(--exo2);
+    font-weight: 700;
     text-transform: uppercase;
-    font-weight: 600;
-    font-size: 12px;
 }
-
 /* -- FOOTER -- */
 footer{
     height: auto;
@@ -145,7 +193,24 @@ footer{
     #registroButtonPC{
         display: block;
     }
+    #cajaBuscador{
+        display: block;
+    }
+    #header-menu-movil{
+        display: none;
+    }
+    #menu{
+        background-color: var(--tercer);
+        justify-content: space-evenly;
+        padding: 8px;
+        display: flex;
+    }
     #menu a{
+        text-decoration: none;
+        color: var(--principal);
+        font-family: var(--exo2);
+        text-transform: uppercase;
+        font-weight: 600;
         font-size: 16px;
     }
     /* FOOTER */
