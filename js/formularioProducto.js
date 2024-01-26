@@ -1,10 +1,15 @@
 window.onload = function(){
-    document.forms["fProducto"].elements["precio"].onclick = comprobarPrecio();
+    document.getElementById("precio").value = "";
+    document.getElementById("precio").addEventListener("blur", comprobarPrecio);
 }
 
 function comprobarPrecio(){
-    var precio = document.forms["fProducto"].elements["precio"].value;
-    if(precio < 0){
-        console.log("Precio erroneo");
-    }
-}
+    let cmpPrecio = document.getElementById("precio");
+    let precio = cmpPrecio.value;
+    setTimeout(() => {
+        if(isNaN(precio) || precio <= 0){
+        alert("Precio erroneo, debes introducir un numero positivo");
+        cmpPrecio.focus();
+        };
+    }, 0);
+};
