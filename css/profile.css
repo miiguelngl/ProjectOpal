@@ -19,15 +19,29 @@ h2{
     color: var(--tercer);
     font-weight: 700;
 }
+h5{
+    font-size: 18px;
+}
 .case{
     background-color: var(--principal);
     border-radius: 25px;
     width: 100%;
     padding: 18px;
-    margin-bottom: 12px;
+    margin-bottom: 26px;
+    margin-top: 26px;
 }
-
-
+.caseProfile{
+    margin: 16px;
+    display: flex;
+    flex-direction: column;
+}
+.caseProfile img{
+    border-radius: 50%;
+    height: 200px;
+}
+.caseProfile-Info{
+    margin-left: 18px;
+}
 /* -- RESPONSIVE -- */
 @media only screen and (max-width: 600px){
 
@@ -37,5 +51,11 @@ h2{
 }
 
 @media only screen and (min-width: 960px){
-    
+    h5{
+        font-size: 20px;
+    }
+    .caseProfile{
+        display: flex;
+        flex-direction: row;
+    }
 }
