@@ -34,6 +34,19 @@ nav{
     padding: 8px; 
     margin-bottom: 0px;
 }
+#buscadorMovil{
+    margin-top: 6px;
+    background-color: var(--principal);
+    color: var(--secundario);
+    border: 2px solid var(--secundario);
+    border-radius: 25px;
+    width: 100%; 
+    font-family: var(--karla);
+    box-sizing: border-box;
+    font-size: 14px; 
+    padding: 8px; 
+    margin-bottom: 0px;
+}
 
 #registroButton{
     background-color: var(--principal);
