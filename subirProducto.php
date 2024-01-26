@@ -37,7 +37,10 @@
                 
                     <label for="foto">Foto de la Zapatilla:</label>
                     <input type="file" id="foto" name="foto" accept="image/*" required>
-                
+
+                    <label for="talla">Talla:</label>
+                    <input type="number" id="talla" name="talla" placeholder="Talla" required>
+
                     <label for="precio">Precio Sugerido:</label>
                     <input type="number" id="precio" name="precio" placeholder="No te pases..." required>
                 
