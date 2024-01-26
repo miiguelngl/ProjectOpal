@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
         if ($conexion->query($consulta) === TRUE) {
             echo "Datos insertados correctamente";
             $_SESSION["Usu"] = $usuario;
-            header("Location: ../../index.html");
+            header("Location: ../../index.php");
             exit();
         } else {
             echo "Error al insertar datos: " /*. $conexion->error*/;

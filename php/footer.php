@@ -6,7 +6,7 @@
                 <a href="">Tienda</a>
                 <a href="subirProducto.html">Subir producto</a>
                 <a href="">Sobre nosotros</a>
-                <a href="contacto.html">Contacto</a>
+                <a href="contacto.php">Contacto</a>
             </div>
             <div>
                 <h3>Contact:</h3>
