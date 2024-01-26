@@ -18,13 +18,14 @@ h2{
     margin-bottom: 12px;
     color: var(--tercer);
     font-weight: 700;
+    margin-left: 18px;
 }
 .case{
     background-color: var(--principal);
     border-radius: 25px;
     width: 100%;
     padding: 18px;
-    margin-bottom: 12px;
+    margin-bottom: 26px;
 }
 .case form{
     display: flex;
@@ -58,7 +59,15 @@ input{
     margin: auto;
     margin-top: 8px;
 }
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 
+input[type="number"] {
+    -moz-appearance: textfield;
+}
 /* -- RESPONSIVE -- */
 @media only screen and (max-width: 600px){
 

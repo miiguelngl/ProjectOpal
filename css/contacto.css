@@ -37,6 +37,15 @@ h3{
 #caseContactInfo{
     padding: 4px;
 }
+#caseContactInfo > ul{
+    list-style-type: none;
+    margin-left: -30px;
+    font-weight: bold;
+}
+#caseContactInfo ul li ul {
+    font-weight: 500;
+    margin-bottom: 8px;
+}
 #formularioContacto{
     background-color: var(--principal);
     border-radius: 25px;
