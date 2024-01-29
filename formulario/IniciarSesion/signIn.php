@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     //Si resultado devuelve alguna fila significa que ya existe un usuario con ese apodo
     if ($resultado->num_rows == 1){
         // "La sesion es correcta";
-        $_SESSION['Usu'] = $usu;
+        $_SESSION['Usu'] = $usuario;
         header("Location: ../../index.php");
         exit();
     
