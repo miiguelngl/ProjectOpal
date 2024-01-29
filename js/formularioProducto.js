@@ -1,6 +1,6 @@
 window.onload = function(){
-    document.getElementById("precio").value = "";
-    document.getElementById("precio").addEventListener("blur", comprobarPrecio);
+    document.getElementById("precio").addEventListener("blur",comprobarPrecio);
+    document.getElementById("descripcion").addEventListener("input", actualizaText);
 }
 
 function comprobarPrecio(){
@@ -22,3 +22,24 @@ function comprobarPrecio(){
         };
     }, 0);
 };
+
+function actualizaText() {
+    let cmpDescripcion = document.getElementById("descripcion");
+    
+    let div = document.getElementById("compruebaCaract");
+    if(div){
+        div.remove();
+    } 
+
+    if(cmpDescripcion.value.length < 400){
+        let div = document.createElement("div");
+        div.id = "compruebaCaract";
+        cmpDescripcion.parentNode.insertBefore(div, cmpDescripcion.nextSibling);
+        div.innerHTML = "Puedes seguir escibiendo";
+    }else{
+        let div = document.createElement("div");
+        div.id = "compruebaCaract";
+        cmpDescripcion.parentNode.insertBefore(div, cmpDescripcion.nextSibling);
+        div.innerHTML = "No puedes escribir mas";
+    }
+}
