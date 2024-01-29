@@ -6,9 +6,18 @@ window.onload = function(){
 function comprobarPrecio(){
     let cmpPrecio = document.getElementById("precio");
     let precio = cmpPrecio.value;
-    setTimeout(() => {
+    let mensajeError = document.getElementById("errorPrecio");
+        if (mensajeError) {
+            mensajeError.remove();
+        }
+        
+    setTimeout(() => {                       
         if(isNaN(precio) || precio <= 0){
-        alert("Precio erroneo, debes introducir un numero positivo");
+        let div = document.createElement("div");
+        div.id = "errorPrecio";         
+        div.style.color = "red";
+        div.textContent = "El precio introducido es incorrecto";
+        cmpPrecio.parentNode.insertBefore(div, cmpPrecio);
         cmpPrecio.focus();
         };
     }, 0);
