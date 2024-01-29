@@ -1,87 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/normalize.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="css/carousel.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/subirProducto.css">
+    <link rel="stylesheet" href="css/contacto.css">
     <script defer src="js/menuDesplegable.js"></script>
     <title>Opal</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <div id="header-menu-movil">
-                <button id="botonMenu">
-                    <img src="img/menu.png" alt="Logo de Pepote">
-                </button>
-                <nav id="header-menu-nav">
-                    <ul>
-                        <li><a href="">Tienda</a></li>
-                        <li><a href="subirProducto.html">Subir producto</a></li>
-                        <li><a href="">Sobre nosotros</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>
-                        <li><input type="text" placeholder="Buscar sneakers..." id="buscadorMovil"></li>
-                    </ul>
-                </nav>
-            </div>
-            <div>
-                <a href="index.html">
-                    <img src="img/LogoOpal.png" alt="Logo de Opal" height="80px">
-                </a>
-            </div>
-            <div id="cajaBuscador">
-                <input type="text" placeholder="Buscar sneakers..." id="buscador">
-            </div>
-            <div>
-                <button id="registroButton">
-                    <a href="/formulario/signIn.html" id="registroButtonPC">Iniciar sesión/Registrarse</a>
-                    <a href="/formulario/signIn.html" id="registroButtonMobile">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
-                            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
-                        </svg>
-                    </a>
-                </button>
-            </div>
-        </nav>
-        <nav id="menu">
-            <a href="">Tienda</a>
-            <a href="subirProducto.html">Subir producto</a>
-            <a href="">Sobre nostros</a>
-            <a href="contacto.html">Contacto</a>
-        </nav>
-    </header>
+    <?php
+        include './php/header.php';
+    ?>
     <main>
         <div class="container">
-            <h2>Subir producto</h2>
-            <div class="case">
-                <form action="procesar_formulario.php" method="post" enctype="multipart/form-data" name="fProducto">
-                    <label for="nombre">Nombre de la Zapatilla:</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Nombre..." required>
-                
-                    <label for="marca">Marca de la Zapatilla:</label>
-                    <select id="marca" name="marca" required>
-                        <option value="Nike">Nike</option>
-                        <option value="Adidas">Adidas</option>
-                        <option value="New Balance">New Balance</option>
-                        <option value="Converse">Converse</option>
-                        <option value="Vans">Vans</option>
-                    </select>
-                
-                    <label for="descripcion">Descripción del Estado del Producto:</label>
-                    <textarea id="descripcion" name="descripcion" rows="4" maxlength="400" placeholder="Descripción de las sneakers..." required></textarea>
-                
-                    <label for="foto">Foto de la Zapatilla:</label>
-                    <input type="file" id="foto" name="foto" accept="image/*" required>
-                
-                    <label for="precio">Precio Sugerido:</label>
-                    <input type="number" id="precio" name="precio" placeholder="No te pases..." required>
-                
-                    <input type="submit" id="enviar" value="Enviar">
-                </form>
+            <div id="caseContact">
+                <div id="caseContactInfo">
+                    <h2>¡Contáctanos!</h2>
+                    <p>
+                        En Opal, valoramos la comunicación directa y estamos aquí para responder a tus preguntas y atender tus necesidades. 
+                        Ya sea que estés buscando más información sobre nuestros productos, desees realizar una compra especial o estés 
+                        interesado en vender tus zapatillas exclusivas, nuestro equipo está listo para ayudarte.
+                    </p>
+                    <h3>Información de contacto:</h3>
+                    <ul>
+                        <li>Teléfono
+                            <ul>
+                                <li>+34 963 41 52 85</li>
+                            </ul>
+                        </li>
+                        <li>Correo de información
+                            <ul>
+                                <li>info@opal.com</li>
+                            </ul>
+                        </li>
+                        <li>Correo de incidencias
+                            <ul>
+                                <li>ayuda@opal.com</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div id="formularioContacto">
+                    <form action="procesar_formulario.php" method="post" enctype="multipart/form-data">
+                        <label for="correo">Correo:</label>
+                        <input type="email" id="correo" name="correo" placeholder="Correo..." required>
+
+                        <label for="telefono">Número de teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="Teléfono...">
+
+                        <label for="asunto">Asunto:</label>
+                        <input type="text" id="asunto" name="asunto" placeholder="Asunto..." required>
+                    
+                        <label for="descripcion">Dinos que necesitas:</label>
+                        <textarea id="descripcion" name="descripcion" rows="4" placeholder="¿Que ocurre?" required></textarea>
+                    
+                        <input type="submit" id="enviar" value="Enviar">
+                    </form>
+                </div>
             </div>
         </div>
     </main>
@@ -93,7 +73,7 @@
                 <a href="">Tienda</a>
                 <a href="subirProducto.html">Subir producto</a>
                 <a href="">Sobre nosotros</a>
-                <a href="contacto.html">Contacto</a>
+                <a href="contacto.php">Contacto</a>
             </div>
             <div>
                 <h3>Contact:</h3>
@@ -129,6 +109,6 @@
             <p>© Copyright Opal 2024. All rights reserved. Privacy Policy - Legal Notice - Conditions of Sale and Withdrawal.</p>
         </div>
     </footer>
-    <script src="js/formularioProducto.js"></script>
+    <script src="js/formularioContacto.js"></script>
 </body>
 </html>

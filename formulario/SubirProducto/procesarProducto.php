@@ -1,0 +1,63 @@
+<?php
+    error_reporting(E_ALL);
+    ini_set('display_errors', '1');
+
+    $nombre=$_POST["nombre"];
+    $marca=$_POST["marca"];
+    $desc=$_POST["descripcion"];
+    $foto=$_FILES["foto"];
+    $talla=$_POST["talla"];
+    $precio=$_POST["precio"];
+    
+
+    //Conexion BBDD
+    $servidor = "localhost";
+    $username = "OpalAdmin";
+    $password = "Yovoyahaceruncorral";
+    $base = "Opal";
+
+
+    session_start();
+    //Comprueba si existe sesion iniciada
+    if(isset($_SESSION['Usu'])){
+        $Us = $_SESSION['Usu'];
+        $conexion = new mysqli($servidor, $username, $password, $base);
+
+        //consulta para saber el IDzapatilla
+        $consulta1 = "SELECT COUNT(*) FROM `Zapatillas`";
+        $resultado = $conexion->query($consulta1);
+
+        
+        if ($resultado) { //Comprueba 
+            $fila = $resultado->fetch_row();
+            $idZa = $fila[0] + 1;
+
+            //consulta para saber el idUsuario
+            $consulta2 = "SELECT `IdUsuario` FROM `Usuario` WHERE `Apodo` = '$Us'";
+            $resultado2 = $conexion->query($consulta2);
+            if($resultado2){
+                echo "Valor de Precio: $precio";
+                $fila2 = $resultado2->fetch_assoc();
+                $idUsuario = $fila2['IdUsuario'];
+                //Inserta Zapatilla a la bbdd
+                $subida = "INSERT INTO `Zapatillas` (IdZapatilla, IdUsuario, Nombre, Marca, Descripcion, Validada, Talla, Precio) VALUES ('$idZa', '$idUsuario', '$nombre', '$marca', '$desc', 0, '$talla', '$precio')";
+                $conexion->query($subida);
+    
+                //Inserta Foto a la bbdd
+                $contenidoImagen = file_get_contents($foto["tmp_name"]); // Lee el contenido de la imagen
+                $subidaFoto = "INSERT INTO `Fotos` (IdZapatilla, Foto) VALUES ('$idZa', ?)";
+                
+                // Prepara la sentencia con un marcador de posición para el blob
+                $stmt = $conexion->prepare($subidaFoto);
+                $stmt->bind_param("s", $contenidoImagen);//s porque es mediumblob
+                $stmt->execute();
+
+                header("Location: ../../index.php");
+            }
+        }
+    }else{
+        header("Location: ../Registro/signUp.html");
+    }
+?>
+    
+    
