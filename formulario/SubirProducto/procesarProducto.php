@@ -36,6 +36,7 @@
             $consulta2 = "SELECT `IdUsuario` FROM `Usuario` WHERE `Apodo` = '$Us'";
             $resultado2 = $conexion->query($consulta2);
             if($resultado2){
+                echo "Valor de Precio: $precio";
                 $fila2 = $resultado2->fetch_assoc();
                 $idUsuario = $fila2['IdUsuario'];
                 //Inserta Zapatilla a la bbdd

@@ -42,7 +42,7 @@
                     <input type="number" id="talla" name="talla" placeholder="Talla" required>
 
                     <label for="precio">Precio Sugerido:</label>
-                    <input type="number" id="precio" name="precio" placeholder="No te pases..." required>
+                    <input type="number" id="precio" name="precio" step="any" placeholder="No te pases..." required>
                 
                     <input type="submit" id="enviar" value="Enviar">
                 </form>
