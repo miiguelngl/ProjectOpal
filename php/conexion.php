@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conexion PHP</title>
 </head>
 
 <body>
@@ -18,7 +17,7 @@
     $conexion = new mysqli ($servername , $username , $password,$bdname);
     if ($conexion->connect_error) {
         die ("No se pudo conectar a la base de datos: " . $conexion->connect_error);
-    }
+    }  
     ?>
 </body>
 

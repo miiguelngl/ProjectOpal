@@ -70,7 +70,11 @@
                     <h2>Vuestras ventas</h2>
                     <a href="">Ver todo...</a>
                 </div>
-                <div></div>
+                <div class="shopBody">
+                    <?php
+                        include './php/catalogo.php';
+                    ?>
+                </div>
             </div>
         </div>
         <div id="sobreNosotros">
@@ -109,7 +113,11 @@
                     <h2>Sneakers más baratas</h2>
                     <a href="">Ver todo...</a>
                 </div>
-                <div></div>
+                <div class="shopBody">
+                    <?php
+                        include './php/catalogo.php';
+                    ?>
+                </div>
             </div>
         </div>
         <section  id="marcas">
