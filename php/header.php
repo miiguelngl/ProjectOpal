@@ -6,7 +6,7 @@
                 </button>
                 <nav id="header-menu-nav">
                     <ul>
-                        <li><a href="">Tienda</a></li>
+                        <li><a href="./tienda.php">Tienda</a></li>
                         <li><a href="./formulario/SubirProducto/subirProducto.php">Subir producto</a></li>
                         <li><a href="">Sobre nosotros</a></li>
                         <li><a href="../contacto.php">Contacto</a></li>
@@ -27,9 +27,11 @@
                 session_start();
 
                  if(isset($_SESSION['Usu'])){
+                    echo'<a href="./profile.php">';
                     echo "<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='#5B85D9' class='bi bi-person-fill' viewBox='0 0 16 16'>";
                     echo "<path d='M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6'/>";
                     echo "</svg>";
+                    echo'</a>';
                     echo "</button>";
                     echo $_SESSION['Usu'];  
                     
@@ -47,9 +49,9 @@
             </div>
         </nav>
         <nav id="menu">
-            <a href="">Tienda</a>
+            <a href="tienda.php">Tienda</a>
             <a href="subirProducto.php">Subir producto</a>
-            <a href="">Sobre nostros</a>
+            <a href="aboutUs.php">Sobre nostros</a>
             <a href="contacto.php">Contacto</a>
         </nav>
     </header>

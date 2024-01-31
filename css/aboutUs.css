@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&family=Karla:wght@200;400&display=swap');
+
+:root{
+    --principal: #f2f2f2;
+    --secundario: #333333;
+    --tercer: rgba(91, 133, 217, 1); 
+    --letra2: #000000;
+    --letra3: rgba(216, 221, 219, 1);
+    --exo2: 'Exo 2', sans-serif;
+    --karla: 'Karla', sans-serif;
+}
+
+.videoCase{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    border-bottom: 4px solid var(--secundario);
+}
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.overlay {
+    position: relative;
+    width: 100%;
+    height: 101vh;
+    top: -101vh;
+    background-color: #1b1b1b92;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#infoVideo h2{
+    font-family: var(--exo2);
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 42px;
+    padding: 8px;
+    text-shadow: 4px 4px #333333b7;
+}
+#infoVideo span{
+    color: var(--tercer);
+}
+.overlay button{
+    position: relative;
+    top: 250px;
+    background-color: transparent;
+    border: 0px;
+}
+
+#servicios{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 36px;
+    margin-bottom: 12px;
+}
+#serviciosCase{
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    width: 90%; 
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+#servicios h2, #servicios h3{
+    font-family: var(--exo2);
+    font-weight: 600;
+}
+#servicios h3{
+    text-align: center;
+}
+#servicios h2{
+    text-transform: uppercase;
+    font-size: 36px;
+    color: var(--tercer);
+}
+.serviciosCaseInfo{
+    padding: 12px;
+    border-radius: 20px;
+    margin-bottom: 36px;
+    width: 350px;
+    font-family: var(--karla);
+    background-color: var(--tercer);
+    color: var(--principal);
+    -webkit-box-shadow: 0px 0px 35px 5px rgba(91,133,217,1);
+    -moz-box-shadow: 0px 0px 35px 5px rgba(91,133,217,1);
+    box-shadow: 0px 0px 35px 5px rgba(91,133,217,1);
+}
+.serviciosCaseInfo:hover {
+    background-color: var(--principal);
+    color: var(--tercer);
+    transform: scale(1.1);
+    transition: 0.7s all;
+}
+.serviciosCaseInfo p{
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+
+
+#marcas{
+    background-color: var(--tercer);
+}
+/* -- RESPONSIVE -- */
+@media only screen and (max-width: 600px){
+
+}
+@media only screen and (min-width: 601px) and (max-width: 960px){
+
+}
+
+@media only screen and (min-width: 960px){
+    /* -- SECTION -- */
+    #infoVideo h2{
+        font-size: 56px;
+        padding: 0px;
+    }
+    #serviciosCase{
+        display: flex;
+        flex-direction: row;  
+        width: 100%; 
+        justify-content: space-evenly;
+        margin-top: 36px;
+        align-items: normal;
+    }
+}

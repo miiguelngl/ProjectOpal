@@ -30,7 +30,7 @@
                       <div class="carousel-caption text-start">
                         <h2>Tu Destino para el Estilo Único.</h2>
                         <p class="opacity-75">En Opal, no solo vendemos zapatillas de marca, sino que ofrecemos una experiencia única centrada en el estilo personal de cada cliente.</p>
-                        <p><a class="btn btn-lg btn-dark" href="tienda.html">Visitar tienda</a></p>
+                        <p><a class="btn btn-lg btn-dark" href="tienda.php">Visitar tienda</a></p>
                       </div>
                     </div>
                 </div>
@@ -70,7 +70,11 @@
                     <h2>Vuestras ventas</h2>
                     <a href="">Ver todo...</a>
                 </div>
-                <div></div>
+                <div class="shopBody">
+                    <?php
+                        include './php/catalogo.php';
+                    ?>
+                </div>
             </div>
         </div>
         <div id="sobreNosotros">
@@ -99,7 +103,7 @@
                         Creemos que el estilo es una extensión de la identidad de cada individuo, 
                         y estamos aquí para ayudarte a encontrar las zapatillas que reflejen tu personalidad única.
                     </p>
-                    <button><a href="">Leer más</a></button>
+                    <button><a href="aboutUs.html">Leer más</a></button>
                 </div>
             </div>
         </div>
@@ -109,7 +113,11 @@
                     <h2>Sneakers más baratas</h2>
                     <a href="">Ver todo...</a>
                 </div>
-                <div></div>
+                <div class="shopBody">
+                    <?php
+                        include './php/catalogo.php';
+                    ?>
+                </div>
             </div>
         </div>
         <section  id="marcas">
