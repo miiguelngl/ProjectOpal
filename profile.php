@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="./css/normalize.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/profile.css">
+    
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/profile.css">
     <script defer src="js/menuDesplegable.js"></script>
     <title>Opal</title>
 </head>
@@ -18,18 +18,11 @@
     <main>
         <div class="container">
             <div class="case">
-                <div class="caseProfile">
-                    <img src="img/pabloMotos.jpeg" alt="Foto de perfil">
-                    <div class="caseProfile-Info">
-                        <h2>PabloElMotorista69</h2>
-                        <h5>Nombre: <span>Pablo</span></h5>
-                        <h5>Apellidos: <span>Motos</span></h5>
-                        <h5>Correo: <span>pablogymrat@gmail.com</span></h5>
-                    </div>
-                </div>
-                <div id="productos">
-                    <h2>Productos en venta</h2>
-                </div>
+                <?php
+                    include './php/profile.php';
+
+                    include './php/productosEnVenta.php';
+                ?>
             </div>
         </div>
     </main>
@@ -79,3 +72,4 @@
     </footer>
 </body>
 </html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

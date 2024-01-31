@@ -32,15 +32,32 @@ h5{
 }
 .caseProfile{
     margin: 16px;
-    display: flex;
     flex-direction: column;
 }
 .caseProfile img{
     border-radius: 50%;
     height: 200px;
 }
-.caseProfile-Info{
+.ventas{
     margin-left: 18px;
+    display: flex;
+}
+.card {
+    max-width: 200px;
+    display: flow;
+    max-height: 350px;
+    text-align: center;
+}
+.imgContainer {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.imgContainer img {
+    width: 199px;
+    height: 200px;
+    object-fit: cover;
 }
 /* -- RESPONSIVE -- */
 @media only screen and (max-width: 600px){
