@@ -1,5 +1,7 @@
 <?php
 //Inicia sesion
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 session_start();
 
 //Si el método es POST entonces recoge los datos
@@ -18,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     
     //Comprobaciones antes de enviar datos
     //Comprueba que exista un USUARIO con el APODO o EMAIL introducido y que tenga la CONTRASEÑA introducida;
-    $comprobacion = "SELECT * FROM `Usuario` WHERE `Apodo` = '$usuario' OR `Correo` = '$usuario' AND `Contraseña` =  '$contraseña'";
+    $comprobacion = "SELECT * FROM `Usuario` WHERE `Apodo` = '$usuario' OR `Correo` = '$usuario' AND `Contrasena` =  '$contraseña'";
     $resultado = $conexion->query($comprobacion);
 
 
@@ -28,8 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     //Si resultado devuelve alguna fila significa que ya existe un usuario con ese apodo
     if ($resultado->num_rows == 1){
         // "La sesion es correcta";
-        $_SESSION['ID'] = $usu;
-        header("Location: ../../index.html");
+        $_SESSION['Usu'] = $usuario;
+        header("Location: ../../index.php");
         exit();
     
     //Si resultado no devuelve ninguna fila significa que los datos no han sido correctamente introducidos
