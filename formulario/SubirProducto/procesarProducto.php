@@ -23,8 +23,8 @@
         $Us = $_SESSION['Usu'];
         $conexion = new mysqli($servidor, $username, $password, $base);
 
-        //consulta para saber el IDzapatilla
-        $consulta1 = "SELECT COUNT(*) FROM `Zapatillas`";
+        //consulta para saber el IDzapatilla    
+        $consulta1 = "SELECT MAX(`IdUsuario`) FROM `Zapatillas`";
         $resultado = $conexion->query($consulta1);
 
         
@@ -40,7 +40,7 @@
                 $fila2 = $resultado2->fetch_assoc();
                 $idUsuario = $fila2['IdUsuario'];
                 //Inserta Zapatilla a la bbdd
-                $subida = "INSERT INTO `Zapatillas` (IdZapatilla, IdUsuario, Nombre, Marca, Descripcion, Validada, Talla, Precio) VALUES ('$idZa', '$idUsuario', '$nombre', '$marca', '$desc', 0, '$talla', '$precio')";
+                $subida = "INSERT INTO `Zapatillas` (Nombre, Marca, Descripcion, Validada, Talla, Precio, IdUsuario) VALUES ('$nombre', '$marca', '$desc', 0, '$talla', '$precio', '$idUsuario')";
                 $conexion->query($subida);
     
                 //Inserta Foto a la bbdd

@@ -58,7 +58,6 @@ if ($resultado) {
             $stmt->close();
         }
         echo'</div>';
-        echo 'REPITE';
     }
 }
 ?>

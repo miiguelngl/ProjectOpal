@@ -1,6 +1,6 @@
 <?php
 include("conexion.php");
-$consulta1 = "SELECT COUNT(*) AS total FROM `Zapatillas`";
+$consulta1 = "SELECT MAX(`IdZapatilla`) AS total FROM `Zapatillas`";
 $resultado = $conexion->query($consulta1);
 if ($resultado) {
     
