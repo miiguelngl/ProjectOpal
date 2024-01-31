@@ -6,7 +6,7 @@
                 </button>
                 <nav id="header-menu-nav">
                     <ul>
-                        <li><a href="">Tienda</a></li>
+                        <li><a href="./tienda.php">Tienda</a></li>
                         <li><a href="./formulario/SubirProducto/subirProducto.php">Subir producto</a></li>
                         <li><a href="">Sobre nosotros</a></li>
                         <li><a href="../contacto.php">Contacto</a></li>
@@ -47,7 +47,7 @@
             </div>
         </nav>
         <nav id="menu">
-            <a href="">Tienda</a>
+            <a href="./tienda.php">Tienda</a>
             <a href="subirProducto.php">Subir producto</a>
             <a href="">Sobre nostros</a>
             <a href="contacto.php">Contacto</a>

@@ -24,7 +24,7 @@
         $conexion = new mysqli($servidor, $username, $password, $base);
 
         //consulta para saber el IDzapatilla    
-        $consulta1 = "SELECT MAX(`IdUsuario`) FROM `Zapatillas`";
+        $consulta1 = "SELECT MAX(`IdZapatilla`) FROM `Zapatillas`";
         $resultado = $conexion->query($consulta1);
 
         

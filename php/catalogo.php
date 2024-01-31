@@ -26,10 +26,10 @@ if ($resultado) {
         //El nombre si tiene mas de 17 caracter se corta
         $nombre = (strlen($fila['Nombre']) > 17) ? substr($fila['Nombre'], 0, 15) . '...' : $fila['Nombre'];
 
-
+        echo("<script>console.log('PHP: " . $blob . "');</script>");
         echo '<div class="card" style="">';
         echo '<div class="imgContainer">';
-            echo '<img src="data:image/jpeg;base64,'. $blob .'" alt="...">';
+            echo '<img src="data:image/bin;base64,'. $blob .'" alt="...">';
         echo '</div>';
             echo '<div class="card-body" alt="...">';
                 echo '<h5 class="card-title">'.$nombre.'</h5>';
