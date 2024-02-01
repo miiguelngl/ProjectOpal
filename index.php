@@ -9,6 +9,7 @@
     <link href="css/carousel.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/productoCase.css">
     <script defer src="js/menuDesplegable.js"></script>
     <title>Opal</title>
 </head>
@@ -68,7 +69,7 @@
             <div class="shop">
                 <div class="shopInfo">
                     <h2>Vuestras ventas</h2>
-                    <a href="">Ver todo...</a>
+                    <a href="tienda.php">Ver todo...</a>
                 </div>
                 <div class="shopBody">
                     <?php
@@ -111,7 +112,7 @@
             <div class="shop">
                 <div class="shopInfo">
                     <h2>Sneakers más baratas</h2>
-                    <a href="">Ver todo...</a>
+                    <a href="tienda.php">Ver todo...</a>
                 </div>
                 <div class="shopBody">
                     <?php
