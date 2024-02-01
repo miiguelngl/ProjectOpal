@@ -61,10 +61,23 @@ nav{
     text-decoration: none;
     font-family: var(--exo2);
     font-weight: 600;
-    
 }
 #registroButtonPC{
     display: none;
+}
+
+#userButton{
+    background-color: var(--tercer);
+    border: 0px;
+    color: var(--principal);
+    border-radius: 25px;
+    padding: 12px;
+    font-size: 14px;
+    margin: 2px; 
+}
+#userButton svg{
+    margin-right: 4px;
+    margin-bottom: 2px;
 }
 #cajaBuscador{
     display: none;

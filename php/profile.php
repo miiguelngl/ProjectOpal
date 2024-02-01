@@ -4,7 +4,7 @@
         <?php
 
             include 'conexion.php';
-            session_start();
+            // session_start();
             if (!isset($_SESSION['Usu'])) {
                 header("Location: ./index.php");
             }

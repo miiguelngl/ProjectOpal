@@ -121,7 +121,7 @@
             </div>
         </div>
         <section  id="marcas">
-            <div class="container d-none d-md-flex">
+            <div class="container d-none d-md-flex mb-0">
                 <div class="row align-items-around">
                     <div class="col-4 col-sm-3 col-md row align-items-center">
                         <img src="img/nike.png" alt="Logo de Nike" class="img-fluid mb-7 mb-md-0">

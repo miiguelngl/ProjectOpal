@@ -60,6 +60,9 @@ h5{
     height: 200px;
     object-fit: cover;
 }
+.caseProfile-Info{
+    margin-left: 24px;
+}
 /* -- RESPONSIVE -- */
 @media only screen and (max-width: 600px){
 

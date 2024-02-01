@@ -62,6 +62,37 @@
             </div>
         </div>
         <section  id="marcas">
+            <div id="marcasInfo">
+                <h2>Nuestras marcas</h2>
+                <h4>Estilo y Autenticidad en Cada Paso</h4>
+                <div class="container">
+                    <p class="text-center">
+                        Descubre el mundo de la moda y la autenticidad con las marcas principales que forman parte de nuestra plataforma dedicada a la compra y venta de zapatillas. En ZapatillasPlus, nos enorgullece colaborar con algunas de las marcas más reconocidas y respetadas en la industria del calzado.
+                    </p>
+                </div>
+                <div class="container">
+                    <div class="marcasInfoText">
+                        <div id="textoDerecha">
+                            <h3>gigantes de la moda</h3>
+                            <p>
+                                Entre nuestras marcas destacadas se encuentran gigantes de la moda deportiva como Nike, Adidas, y New Balance, que han dejado una huella imborrable en la cultura urbana. Desde estilos icónicos hasta innovaciones vanguardistas, estas marcas son sinónimo de calidad y autenticidad.
+                            </p>
+                        </div>
+                        <div class="marcasInfoImg">
+                            <img src="img/sneaker-air-jordan-11.png" alt="" height="250px">
+                        </div>
+                    </div>
+                    <div class="marcasInfoText">
+                        <div class="marcasInfoImg">
+                            <img src="img/sneaker-adidas-forum-low-x-bad-bunny-cloud-white.png" alt="" height="250px">
+                        </div>
+                        <div id="textoIzquierda">
+                            <h3>opciones clásicas y atemporales</h3>
+                            <p>Además, contamos con opciones clásicas y atemporales de Converse, que han acompañado a generaciones con su distintivo diseño. Y para aquellos que buscan la perfecta combinación entre comodidad y estilo, nuestras opciones de Vans ofrecen un toque urbano que marca la diferencia.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="container d-none d-md-flex">
                 <div class="row align-items-around">
                     <div class="col-4 col-sm-3 col-md row align-items-center">
