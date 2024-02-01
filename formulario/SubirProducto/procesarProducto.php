@@ -56,7 +56,7 @@
             }
         }
     }else{
-        header("Location: ../Registro/signUp.html");
+        header("Location: ../IniciarSesion/signIn.html");
     }
 ?>
     

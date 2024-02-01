@@ -47,6 +47,7 @@ h5{
     display: flow;
     max-height: 350px;
     text-align: center;
+    overflow: hidden;
 }
 .imgContainer {
     width: 200px;
