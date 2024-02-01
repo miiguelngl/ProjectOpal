@@ -25,9 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     $conexion = new mysqli($servidor, $username, $password, $base);
 
     
-    //Conseguir el ID de Usuario
-    $idUsu = (mysqli_fetch_array($conexion->query("SELECT COUNT(*) FROM Usuario"))[0]+1);
-    
+
     //Comprobaciones antes de enviar datos
     //Comprueba que el USERNAME no exista en la BBDD;
     $comprobacionUsu = "SELECT * FROM `Usuario` WHERE `Apodo` = '$usuario'";
@@ -48,11 +46,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
         echo "El correo electrónico de usuario ya está en uso";
     }else{
 
-        $consulta = "INSERT INTO `Usuario` (Apodo, Nombre, Apellidos, Correo, Contraseña, IdUsuario, Admin) VALUES ('$usuario', '$nombre', '$apellidos', '$email', '$contrasena', $idUsu, 0)";
+        $consulta = "INSERT INTO `Usuario` (Apodo, Nombre, Apellidos, Correo, Contrasena, Admin) VALUES ('$usuario', '$nombre', '$apellidos', '$email', '$contrasena', 0)";
         if ($conexion->query($consulta) === TRUE) {
             echo "Datos insertados correctamente";
             $_SESSION["Usu"] = $usuario;
-            header("Location: ../../index.html");
+            header("Location: ../../index.php");
             exit();
         } else {
             echo "Error al insertar datos: " /*. $conexion->error*/;
