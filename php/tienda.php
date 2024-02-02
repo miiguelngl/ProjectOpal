@@ -15,6 +15,7 @@ if ($resultado) {
     
     $mensajitos = array('Mucha gente las quiere','Renueva tu estilo','Mejora tu outfit','Combinan con todo','Sneakers recientes','Sube de nivel');
     shuffle($mensajitos);
+    
     for ($i = 1; $i <= 2; $i++){
         
         $zapatillas = range(1, $totalZapatillas);
@@ -44,7 +45,7 @@ if ($resultado) {
             $blob = base64_encode($fila2['Foto']);
 
             //El nombre si tiene mas de 17 caracter se corta
-            $nombre = (strlen($resultados['Nombre']) > 17) ? substr($resultados['Nombre'], 0, 15) . '...' : $resultados['Nombre'];
+            $nombre = (strlen($resultados['Nombre']) > 15) ? substr($resultados['Nombre'], 0, 14) . '...' : $resultados['Nombre'];
 
             echo '<div class="card">';
                 echo '<div class="imgContainer">';
@@ -53,6 +54,7 @@ if ($resultado) {
                 echo '<div class="card-body">';
                     echo '<h5 class="card-title">'.$nombre.'</h5>';
                     echo '<p class="card-text">'.$resultados['Precio'].'€</p>';
+                    echo '<a href="#" class="card-button">Comprar</a>';
                 echo '</div>';
             echo'</div>';
             $stmt->close();

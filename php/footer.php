@@ -3,7 +3,7 @@
             <div><img src="img/LogoOpal.png" alt="" height="150px" width="150px"></div>
             <div class="infoFooterMenu">
                 <h3>Menú</h3>
-                <a href="">Tienda</a>
+                <a href="tienda.php">Tienda</a>
                 <a href="subirProducto.php">Subir producto</a>
                 <a href="aboutUs.php">Sobre nosotros</a>
                 <a href="contacto.php">Contacto</a>

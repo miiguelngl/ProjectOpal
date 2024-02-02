@@ -16,8 +16,14 @@
 <body>
     <?php
         include './php/header.php';
-
-        include './php/tienda.php';
+    ?>
+    <main>
+        <?php
+            include './php/tienda.php';
+        ?>
+    </main>
+    <?php
+        include './php/footer.php';
     ?>
 
 </body>
