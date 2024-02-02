@@ -6,10 +6,10 @@
                 </button>
                 <nav id="header-menu-nav">
                     <ul>
-                        <li><a href="./tienda.php">Tienda</a></li>
-                        <li><a href="./formulario/SubirProducto/subirProducto.php">Subir producto</a></li>
-                        <li><a href="">Sobre nosotros</a></li>
-                        <li><a href="../contacto.php">Contacto</a></li>
+                        <li><a href="tienda.php">Tienda</a></li>
+                        <li><a href="subirProducto.php">Subir producto</a></li>
+                        <li><a href="aboutUs.php">Sobre nosotros</a></li>
+                        <li><a href="contacto.php">Contacto</a></li>
                     </ul>
                 </nav>
             </div>

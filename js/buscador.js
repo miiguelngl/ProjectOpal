@@ -12,12 +12,19 @@ function Datos(){
     }).then(response => response.json())
     .then (data => {
         if(data!="<li>sin resultados<li>"){
+            content.style.border = "#333333 2px solid";
             content.innerHTML = '';
-            data.forEach(item => {
-                content.innerHTML += '<li>' + item.Nombre + '</li>';
-            }); 
+            if(data[0] != undefined){
+                data.forEach(item => {
+                    content.innerHTML += '<li>' + item.Nombre + '</li>';
+                }); 
+            }else{
+                content.style.border = "none";
+                content.innerHTML = '';     
+            }
         }else{
-             content.innerHTML = '';     
+            content.style.border = "none";
+            content.innerHTML = '';     
         }
     }).catch(err => console.log(err))       
 }

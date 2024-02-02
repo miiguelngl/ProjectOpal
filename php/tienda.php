@@ -53,7 +53,7 @@ if ($resultado) {
                 echo '</div>';
                 echo '<div class="card-body">';
                     echo '<h5 class="card-title">'.$nombre.'</h5>';
-                    echo '<p class="card-text">'.$resultados['Precio'].'€</p>';
+                    echo '<p class="card-text" e='."$resultados[IdZapatilla]".'>'.$resultados['Precio'].'€</p>';
                     echo '<a href="#" class="card-button">Comprar</a>';
                 echo '</div>';
             echo'</div>';
