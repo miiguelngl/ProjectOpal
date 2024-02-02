@@ -56,7 +56,7 @@
         <nav id="menu">
             <a href="tienda.php">Tienda</a>
             <a href="subirProducto.php">Subir producto</a>
-            <a href="aboutUs.php">Sobre nostros</a>
+            <a href="aboutUs.php">Sobre nosotros</a>
             <a href="contacto.php">Contacto</a>
         </nav>
     </header>
