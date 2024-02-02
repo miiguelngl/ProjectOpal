@@ -21,7 +21,7 @@
             
 
             echo '<h2>'. $usuario['Apodo'].'</h2>';
-            echo '<h5>Nombre:<span>'.$usuario['Nombre'].'</span></h5>';
+            echo '<h5>Nombre: <span>'.$usuario['Nombre'].'</span></h5>';
             echo '<h5>Apellidos: <span>'.$usuario['Apellidos'].'</span></h5>';
             echo '<h5>Correo: <span>'.$usuario['Correo'].'</span></h5>';
             $stmt->close();

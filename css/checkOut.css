@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&family=Karla:wght@200;400&display=swap');
+
+:root{
+    --principal: #f2f2f2;
+    --secundario: #333333;
+    --tercer: rgba(91, 133, 217, 1); 
+    --letra2: #000000;
+    --letra3: rgba(216, 221, 219, 1);
+    --exo2: 'Exo 2', sans-serif;
+    --karla: 'Karla', sans-serif;
+}
+
+body{
+    font-family: var(--karla);
+}
+h3, h4{
+    font-family: var(--exo2);
+    margin-top: 12px;
+    color: var(--tercer);
+    font-weight: 700;
+}
+
+.card-button{
+    background-color: var(--tercer);
+    color: var(--principal);
+    padding: 8px 12px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-family: var(--exo2);
+    font-weight: 600;
+}
+
+.case{
+    background-color: var(--principal);
+    border-radius: 25px;
+    width: 50%;
+    padding: 18px;
+    margin-bottom: 26px;
+    margin-top: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#caseCenter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+hr{
+    width: 90%;
+    margin-top: -2px;
+}
+#caseProduct{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+#caseProductImg{
+    max-height: 400px;
+    overflow: hidden;
+    border-radius: 20px;
+    width: 90%;
+}
+#caseProductImg img{
+    width: 100%;
+    max-width: 400px;
+    max-height: 400px;
+}
+#caseProductInfo { 
+    grid-area: 1 / 2 / 2 / 3; 
+    padding: 6px;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* -- RESPONSIVE -- */
+@media only screen and (max-width: 600px){
+
+}
+@media only screen and (min-width: 601px) and (max-width: 960px){
+
+}
+
+@media only screen and (min-width: 960px){
+    h5{
+        font-size: 20px;
+    }
+}
