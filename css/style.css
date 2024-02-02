@@ -179,7 +179,27 @@ footer{
     color: var(--tercer);
     font-family: var(--karla);
 }
-
+#contenido {
+    position: absolute;
+    text-align: justify;
+    padding: 0;
+    margin-left: 50px;
+    border-radius: 5px;
+    background: var(--principal);
+    z-index: 100000;
+}
+#contenido li {
+    list-style: none;
+    padding: 10px;
+    
+    
+    margin: 0;
+    width: 400px;
+    
+}
+#contenido li:nth-child(n+8) {
+    display: none;
+}
 
 /* -- RESPONSIVE -- */
 @media only screen and (max-width: 600px){
