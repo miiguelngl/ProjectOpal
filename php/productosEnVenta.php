@@ -38,7 +38,6 @@
                             echo '<div class="card-body" alt="...">';
                                 echo '<h5 class="card-title">'.$nombre.'</h5>';
                                 echo '<p class="card-tex">'.$filaZapatilla['Precio'].'€</p>';
-                                echo '<a href="#" class="btn btn-primary">Comprar</a>';
                             echo '</div>';
                         echo'</div>';
                     }

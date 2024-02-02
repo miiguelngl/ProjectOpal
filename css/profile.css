@@ -63,6 +63,9 @@ h5{
 .caseProfile-Info{
     margin-left: 24px;
 }
+.card{
+    background-color: transparent !important;
+}
 /* -- RESPONSIVE -- */
 @media only screen and (max-width: 600px){
 
