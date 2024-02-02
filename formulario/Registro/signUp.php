@@ -16,13 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     $email = $_POST["email"];
     $contrasena = password_hash($_POST["pass"], PASSWORD_DEFAULT);
     
-    //Conexion BBDD
-    $servidor = "localhost";
-    $username = "OpalAdmin";
-    $password = "Yovoyahaceruncorral";
-    $base = "Opal";
-
-    $conexion = new mysqli($servidor, $username, $password, $base);
+    include '../../php/conexion.php';
 
     
 
