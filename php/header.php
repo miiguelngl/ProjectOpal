@@ -18,9 +18,13 @@
                     <img src="./img/LogoOpal.png" alt="Logo de Opal" height="80px">
                 </a>
             </div>
-            <div id="cajaBuscador">
-                <input type="text" placeholder="Buscar sneakers..." id="buscador">
-            </div>
+            <form action="./php/buscador.php" method="post">
+                <div id="cajaBuscador">
+                    <input name="campo" type="text" placeholder="Buscar sneakers..." id="buscador">
+                    <ul id="contenido"></ul>
+                </div>
+            </form>
+            
             <div>
                 <?php
                     echo'<a href="./profile.php">';
@@ -59,4 +63,5 @@
             <a href="aboutUs.php">Sobre nostros</a>
             <a href="contacto.php">Contacto</a>
         </nav>
+        <script src="./js/buscador.js"></script>
     </header>
