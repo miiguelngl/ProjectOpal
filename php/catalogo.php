@@ -6,18 +6,19 @@ if ($resultado) {
     
     //Obtiene los resultados de la consulta como una array asociativo
     $fila = $resultado->fetch_assoc();
-    
+    $array = range(1, $fila['total']);
+    shuffle($array);
     // Obtener el valor de la columna 'total'
     $totalZapatillas = $fila['total'];
 
     for ($i = 1; $i <= 5; $i++) {
         //Consulta de la zapatila
-        $consulta2="SELECT * FROM `Zapatillas` WHERE `IdZapatilla` = $i"; 
+        $consulta2="SELECT * FROM `Zapatillas` WHERE `IdZapatilla` = $array[$i]"; 
         $resultado = $conexion->query($consulta2);
         $fila = $resultado->fetch_assoc();
         
         //Consulta de la imagen de la zapatilla
-        $consulta3 = "SELECT * FROM `Fotos` WHERE `IdZapatilla` = $i";
+        $consulta3 = "SELECT * FROM `Fotos` WHERE `IdZapatilla` = $array[$i]";
         $resultado2 = $conexion->query($consulta3);
         $fila2 = $resultado2->fetch_assoc();
         
@@ -31,7 +32,7 @@ if ($resultado) {
         echo '</div>';
             echo '<div class="card-body" alt="...">';
                 echo '<h5 class="card-title">'.$nombre.'</h5>';
-                echo '<p class="card-text">'.$fila['Precio'].'€</p>';
+                echo '<p class="card-text" e="'.$fila['IdZapatilla'].'">'.$fila['Precio'].'€</p>';
                 echo '<a href="#" class="card-button">Comprar</a>';
             echo '</div>';
         echo'</div>';

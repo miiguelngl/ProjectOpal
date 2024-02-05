@@ -25,7 +25,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
         if (password_verify($contraseña_ingresada, $fila['Contrasena'])) {
             // La sesión es correcta
             $_SESSION['Usu'] = $fila['Apodo'];
-            header("Location: ../../index.php");
+
+            if ($fila['Admin'] == '1') {
+                header("Location: ../../admin.php");
+            }else{
+                header("Location: ../../index.php");
+            }
             exit();
         }else{
             // "La contraseña NO es correcta";

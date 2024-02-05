@@ -2,7 +2,7 @@
         <nav>
             <div id="header-menu-movil">
                 <button id="botonMenu">
-                    <img src="./img/menu.png" alt="Logo de Pepote">
+                    <img src="./img/menu.png" alt="Logo de Perfil">
                 </button>
                 <nav id="header-menu-nav">
                     <ul>
@@ -32,7 +32,9 @@
                         
                 
             <?php
-                session_start();
+                if (session_status() == PHP_SESSION_NONE) {
+                    session_start();
+                }
 
                  if(isset($_SESSION['Usu'])){
                     echo '<button id="userButton">';

@@ -1,50 +1,72 @@
 <?php
-        include "conexion.php";
-        $consulta1 = "SELECT * FROM `Usuario` WHERE `Apodo` = ?";
-        $username = $_SESSION['Usu'];
-        $stmt = $conexion->prepare($consulta1);
-        $stmt->bind_param("s", $username);
-        $exito = $stmt->execute();
-        if ($exito) {
-            $resultado = $stmt->get_result();
-            $fila = $resultado->fetch_assoc();
-            $consulta2 = "SELECT * FROM `Zapatillas` WHERE `IdUsuario` = ?";
-            $stmt = $conexion->prepare($consulta2);
-            $stmt->bind_param("s", $fila['IdUsuario']);
-            $exito = $stmt->execute();
-            if ($exito) {
-                $resultadoZapatillas = $stmt->get_result();
-                
-                // Bucle para cada resultado de la consulta
-                // echo'<div class="ventas">';
-                // while ($filaZapatilla = $resultadoZapatillas->fetch_assoc()) {
-                //     // Consulta de la imagen de la zapatilla
-                //     $consulta3 = "SELECT * FROM `Fotos` WHERE `IdZapatilla` = ?";
-                //     $stmtImagen = $conexion->prepare($consulta3);
-                //     $stmtImagen->bind_param("s", $filaZapatilla['IdZapatilla']);
-                //     $exitoImagen = $stmtImagen->execute();
-                //     if ($exitoImagen) {
-                //         $resultadoImagen = $stmtImagen->get_result();
-                //         $filaImagen = $resultadoImagen->fetch_assoc();
+
+    include "conexion.php";
+        
+    if(isset($_GET['pt'])) {
+        // Recupera el valor del parámetro "id"
+        $p = $_GET['pt'];
+        
+        //Consulta 
+        $consultaZapa = "SELECT * FROM `Zapatillas` WHERE `IdZapatilla` = ?";
+
+        $stmt = $conexion->prepare($consultaZapa);
+        $stmt->bind_param("s", $p);
+        $stmt->execute();
+
+        $result1 = $stmt->get_result();
+
+        if($result1->num_rows == 1) {
+            $arrayZapa = $result1->fetch_array(MYSQLI_ASSOC);
+            $idUsu= $arrayZapa['IdUsuario'];
+            $consultaUsu = "SELECT * FROM `Usuario` WHERE `IdUsuario` = ?";
+            
+            $stmt2 = $conexion->prepare($consultaUsu);
+            $stmt2->bind_param("s", $idUsu);
+            $stmt2->execute();
+
+            $result2 = $stmt2->get_result();
+            
+            if($result2->num_rows == 1) {
+                $arrayUsu = $result2->fetch_array(MYSQLI_ASSOC);
+
+                $consultaFoto = "SELECT * FROM `Fotos` WHERE `IdZapatilla` = ?";
+
+                $stmt3 = $conexion->prepare($consultaFoto);
+                $stmt3->bind_param("s", $p);
+                $stmt3->execute();
     
-                //         $blob = base64_encode($filaImagen['Foto']);
+                $result3 = $stmt3->get_result();
     
-                //         $nombre = (strlen($filaZapatilla['Nombre']) > 17) ? substr($filaZapatilla['Nombre'], 0, 15) . '...' : $filaZapatilla['Nombre'];
-                //         echo '<div class="card" style="">';
-                //             echo '<div class="imgContainer">';
-                //                 echo '<img src="data:image/bin;base64,'. $blob .'" alt="...">';
-                //             echo '</div>';
-                //             echo '<div class="card-body" alt="...">';
-                //                 echo '<h5 class="card-title">'.$nombre.'</h5>';
-                //                 echo '<p class="card-tex">'.$filaZapatilla['Precio'].'€</p>';
-                //             echo '</div>';
-                //         echo'</div>';
-                //     }
-                // }
-                // echo'</div>';
-            } else {
-                echo "Error en la segunda consulta: " . $conexion->error;
+                if($result3->num_rows > 0) {
+                    $arrayFoto = $result3->fetch_array(MYSQLI_ASSOC);
+                    $imagenZapa = base64_encode($arrayFoto['Foto']);
+                    echo "<div class='container' id='caseCenter'>";
+                        echo "<div class='case'>";
+                            echo "<div id='userName'>";
+                                echo "<h4>".$arrayUsu['Apodo']."</h4>";
+                            echo "</div>";        
+                            echo "<div id='caseProduct'>";
+                                echo "<div id='caseProductImg'>";
+                                    echo "<img src='data:image/jpeg;base64, $imagenZapa' alt='Imagen del usuario'>";
+                                echo "</div>";
+                                echo "<div id='caseProductInfo'>";
+                                    echo "<h3>".$arrayZapa['Nombre']."</h3>";
+                                    echo "<h5>".$arrayZapa['Marca']."</h5>";
+                                    echo "<p>".$arrayZapa['Precio']."€</p>";
+                                    echo "<a href='#' class='card-button'>Comprar</a>";
+                                echo "</div>";
+                                echo "<hr>";
+                                echo "<div>";
+                                    echo "<h3>Descripcion del producto</h3>";
+                                    echo "<p>".$arrayZapa['Descripcion']."</p>";
+                                echo "</div>";
+                            echo "</div>";
+                        echo "</div>";
+                    echo "</div>";  
+                }
             }
-        } else {
-            echo "Error en la primera consulta: " . $conexion->error;
-        }
+         }      
+    } else {
+        echo "No existe producto";
+    }
+?>

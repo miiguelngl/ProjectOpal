@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/productoCase.css">
+    <script defer src="js/enlaces.js"></script>
     <script defer src="js/menuDesplegable.js"></script>
     <title>Opal</title>
 </head>
