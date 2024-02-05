@@ -55,11 +55,11 @@
                                     echo "<p>".$arrayZapa['Precio']."€</p>";
                                     echo "<a href='#' class='card-button'>Comprar</a>";
                                 echo "</div>";
-                                echo "<hr>";
-                                echo "<div>";
+                            echo "</div>";
+                            echo "<hr>";
+                            echo "<div>";
                                     echo "<h3>Descripcion del producto</h3>";
                                     echo "<p>".$arrayZapa['Descripcion']."</p>";
-                                echo "</div>";
                             echo "</div>";
                         echo "</div>";
                     echo "</div>";  
