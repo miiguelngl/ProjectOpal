@@ -29,12 +29,13 @@ h3, h4{
     text-decoration: none;
     font-family: var(--exo2);
     font-weight: 600;
+    margin-bottom: 8px;
 }
 
 .case{
     background-color: var(--principal);
     border-radius: 25px;
-    width: 60%;
+    width: 80%;
     padding: 18px;
     margin-bottom: 26px;
     margin-top: 26px;
@@ -45,27 +46,22 @@ h3, h4{
     justify-content: center;
 }
 #caseProduct {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    display: flex;
+    flex-direction: column;
 }
     
 #caseProductImg { 
-    grid-area: 1 / 1 / 2 / 2; 
     overflow: hidden;
     display: flex;
-    /* justify-content: center;
-    align-items: center; */
 }
 #caseProductImg img{
-    width: 90%;
+    width: 100%;
     border-radius: 20px;
     max-width: 450px;
     max-height: 450px;
+    margin-bottom: 12px;
 }
 #caseProductInfo { 
-    grid-area: 1 / 2 / 2 / 3; 
     padding: 6px;
     background-color: white;
     border-radius: 20px;
@@ -79,7 +75,25 @@ h3, h4{
 
 }
 @media only screen and (min-width: 601px) and (max-width: 960px){
-
+    .case{
+        width: 75%;
+    }
+    #caseProduct {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+    #caseProductImg { 
+        grid-area: 1 / 1 / 2 / 2; 
+    }
+    #caseProductInfo { 
+        grid-area: 1 / 2 / 2 / 3; 
+    }
+    #caseProductImg img{
+        width: 90%;
+        margin-bottom: 0px;
+    }
 }
 
 @media only screen and (min-width: 960px){
@@ -89,5 +103,24 @@ h3, h4{
     .caseProfile{
         display: flex;
         flex-direction: row;
+    }
+    .case{
+        width: 60%;
+    }
+    #caseProduct {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+    #caseProductImg { 
+        grid-area: 1 / 1 / 2 / 2; 
+    }
+    #caseProductInfo { 
+        grid-area: 1 / 2 / 2 / 3; 
+    }
+    #caseProductImg img{
+        width: 90%;
+        margin-bottom: 0px;
     }
 }

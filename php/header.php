@@ -2,14 +2,14 @@
         <nav>
             <div id="header-menu-movil">
                 <button id="botonMenu">
-                    <img src="./img/menu.png" alt="Logo de Pepote">
+                    <img src="./img/menu.png" alt="Logo de Perfil">
                 </button>
                 <nav id="header-menu-nav">
                     <ul>
-                        <li><a href="./tienda.php">Tienda</a></li>
-                        <li><a href="./formulario/SubirProducto/subirProducto.php">Subir producto</a></li>
-                        <li><a href="">Sobre nosotros</a></li>
-                        <li><a href="../contacto.php">Contacto</a></li>
+                        <li><a href="tienda.php">Tienda</a></li>
+                        <li><a href="subirProducto.php">Subir producto</a></li>
+                        <li><a href="aboutUs.php">Sobre nosotros</a></li>
+                        <li><a href="contacto.php">Contacto</a></li>
                     </ul>
                 </nav>
             </div>
@@ -18,9 +18,13 @@
                     <img src="./img/LogoOpal.png" alt="Logo de Opal" height="80px">
                 </a>
             </div>
-            <div id="cajaBuscador">
-                <input type="text" placeholder="Buscar sneakers..." id="buscador">
-            </div>
+            <form action="./php/buscador.php" method="post">
+                <div id="cajaBuscador">
+                    <input name="campo" type="text" placeholder="Buscar sneakers..." id="buscador">
+                    <ul id="contenido"></ul>
+                </div>
+            </form>
+            
             <div>
                 <?php
                     echo'<a href="./profile.php">';
@@ -28,7 +32,9 @@
                         
                 
             <?php
-                session_start();
+                if (session_status() == PHP_SESSION_NONE) {
+                    session_start();
+                }
 
                  if(isset($_SESSION['Usu'])){
                     echo '<button id="userButton">';
@@ -59,4 +65,5 @@
             <a href="aboutUs.php">Sobre nosotros</a>
             <a href="contacto.php">Contacto</a>
         </nav>
+        <script src="./js/buscador.js"></script>
     </header>

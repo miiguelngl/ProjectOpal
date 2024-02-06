@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/tienda.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/productoCase.css">
-    
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script defer src="js/menuDesplegable.js"></script>
     <title>Opal</title>
 </head>
@@ -27,4 +27,5 @@
     ?>
 
 </body>
+<script src="./js/enlaces.js"></script>
 </html>

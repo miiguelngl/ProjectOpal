@@ -1,0 +1,33 @@
+table {
+    text-align: center;
+}
+tr th:first-child {
+    text-align: left;
+}
+tr td:first-child {
+    text-align: left;
+}
+tr:nth-child(odd) {
+    background-color: powderblue;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+button:nth-child(odd) { 
+    margin-right: 20px;
+}
+tr{
+    width: 100vw;
+    overflow: hidden;
+}
+
+td{
+    width: 20vw;
+}
+h4{
+    text-align: center;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+}

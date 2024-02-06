@@ -179,7 +179,36 @@ footer{
     color: var(--tercer);
     font-family: var(--karla);
 }
+#contenido {
+    position: absolute;
+    top: 61px;
+    text-align: justify;
+    padding: 0;
+    margin-left: 50px;
+    border-radius: 0 0 20px 20px;
+    overflow: hidden;
+    background: var(--principal);
+    z-index: 100000;
+}
+#contenido li {
+    list-style: none;
+    padding: 10px;
+    
+    border-bottom: #747474 1px solid;
+    margin: 0;
+    width: 400px;
+    
+}
+#contenido > :last-child {
+    border: none;
+}
+#contenido li:nth-child(7) {
+    border: none;
+}
 
+#contenido li:nth-child(n+8) {
+    display: none;
+}
 
 /* -- RESPONSIVE -- */
 @media only screen and (max-width: 600px){
