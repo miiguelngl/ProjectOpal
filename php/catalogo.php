@@ -25,7 +25,7 @@ if ($resultado) {
         $blob = base64_encode($fila2['Foto']);
 
         //El nombre si tiene mas de 17 caracter se corta
-        $nombre = (strlen($fila['Nombre']) > 17) ? substr($fila['Nombre'], 0, 15) . '...' : $fila['Nombre'];
+        $nombre = (strlen($fila['Nombre']) > 15) ? substr($fila['Nombre'], 0, 14) . '...' : $fila['Nombre'];
         echo '<div class="card" style="">';
         echo '<div class="imgContainer">';
             echo '<img src="data:image/bin;base64,'. $blob .'" alt="...">';

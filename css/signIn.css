@@ -87,3 +87,8 @@ a{
 #terminos{
     font-size: 10px;
 }
+
+#formularioEnlaces{
+    display: flex;
+    flex-direction: column;
+}

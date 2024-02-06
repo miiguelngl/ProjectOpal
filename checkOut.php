@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/normalize.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/checkOut.css">
     <script defer src="js/menuDesplegable.js"></script>
@@ -35,7 +36,18 @@
 
                         <label for="descripcion">Observaciones:</label>
                         <textarea id="descripcion" name="descripcion" rows="4" placeholder="Dejar en recepción, dejarselo al conserje..." required></textarea>
-                    
+
+                        <div class="form-row">
+                            <div class="col">
+                                <label for="asunto">Tarjeta:</label><br>
+                                <input type="number" min="0" pattern="[0-9]{12}" id="direccion" name="direccion" placeholder="Número tarjeta..." required>
+                            </div>
+                            <div class="col">
+                                <label for="asunto">CVV:</label><br>
+                                <input type="number" min="0" pattern="[0-9]{3}" id="direccion" name="direccion" placeholder="CVV..." required>
+                            </div>
+                        </div>
+
                         <input type="submit" id="enviar" value="Enviar">
                     </form>
                 </div>

@@ -118,7 +118,19 @@ input{
     margin: auto;
     margin-top: 8px;
 }
+.form-row{
+    display: flex;
+    flex-direction: row;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 
+input[type="number"] {
+    -moz-appearance: textfield;
+}
 /* -- RESPONSIVE -- */
 @media only screen and (max-width: 600px){
 

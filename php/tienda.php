@@ -20,7 +20,11 @@ if ($resultado) {
         
         $zapatillas = range(1, $totalZapatillas);
         shuffle($zapatillas);
-        echo '<h5 class="card-title">'.$mensajitos[$i].'</h5>';
+        echo '<div class="container">';
+        echo '<div id="mensaje">';
+            echo '<h5 class="card-title">'.$mensajitos[$i].'</h5>';
+        echo '</div>';
+        echo '<hr>';
         echo'<div class="container">';
         for ($j = 1; $j <= 12; $j++){
             
@@ -59,6 +63,7 @@ if ($resultado) {
             echo'</div>';
             $stmt->close();
         }
+        echo'</div>';
         echo'</div>';
     }
 }
