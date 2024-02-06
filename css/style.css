@@ -208,8 +208,9 @@ footer{
 
 #contenido li:nth-child(n+8) {
     display: none;
+}#tecla { 
+    display: none;
 }
-
 /* -- RESPONSIVE -- */
 @media only screen and (max-width: 600px){
 

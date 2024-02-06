@@ -21,6 +21,7 @@
             <form action="./php/buscador.php" method="post">
                 <div id="cajaBuscador">
                     <input name="campo" type="text" placeholder="Buscar sneakers..." id="buscador">
+                    <input name="tecla" type="text" id="tecla">
                     <ul id="contenido"></ul>
                 </div>
             </form>

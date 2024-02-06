@@ -3,9 +3,10 @@
     ini_set('display_errors', '1');
     include "conexion.php";
 
-    $columnas = ['Nombre', 'Marca'];
+    $columnas = ['Nombre', 'Marca', 'IdZapatilla'];
     $tabla = 'Zapatillas';
     $campo = isset($_POST['campo']) ? $conexion->real_escape_string($_POST['campo']) : null;
+    $tecla = isset($_POST['tecla']) ? $conexion->real_escape_string($_POST['tecla']) : null;
 
     $condicion = '';
 
