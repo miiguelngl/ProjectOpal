@@ -33,54 +33,61 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['pt'])  && $_GET['pt'] !
     }
 // }
 
-shuffle($idValidadas);
+
 if(count($idValidadas)==0){
     echo "<p class='text-center'>No hay resultados</p>";
 }else{
-    echo '<div class="container">';
-    echo '<div id="mensaje">';
-        echo '<h5 class="card-title">'.$mensajitos[0].'</h5>';
-    echo '</div>';
-    echo '<hr>';
-    echo'<div class="container">';
-for ($j = 0; $j < count($idValidadas); $j++){
-    
-    $consulta2 = "SELECT * FROM `Zapatillas` WHERE `IdZapatilla` = ?";
-
-    // Crear una sentencia preparada
-    $stmt = $conexion->prepare($consulta2);
-
-    // Vincular el parámetro
-    $stmt->bind_param("i", $idValidadas[$j]);
-    
-    // Ejecutar la consulta
-    $stmt->execute();
-
-    $resultados = ($stmt->get_result())->fetch_assoc();
-
-    //Consulta de la imagen de la zapatilla
-    $consulta3 = "SELECT * FROM `Fotos` WHERE `IdZapatilla` = $idValidadas[$j]";
-    $resultado2 = $conexion->query($consulta3);
-    $fila2 = $resultado2->fetch_assoc();
-
-    $blob = base64_encode($fila2['Foto']);
-
-    //El nombre si tiene más de 17 caracteres se corta
-    $nombre = (strlen($resultados['Nombre']) > 15) ? substr($resultados['Nombre'], 0, 14) . '...' : $resultados['Nombre'];
-
-    echo '<div class="card">';
-        echo '<div class="imgContainer">';
-            echo '<img src="data:image/jpeg;base64,'. $blob .'" alt="...">';
+        shuffle($idValidadas);
+        echo '<div class="container">';
+        echo '<div id="mensaje">';
+            echo '<h5 class="card-title">'.$mensajitos[0].'</h5>';
         echo '</div>';
-        echo '<div class="card-body">';
-            echo '<h5 class="card-title">'.$nombre.'</h5>';
-            echo '<p class="card-text" e='."$resultados[IdZapatilla]".'>'.$resultados['Precio'].'€</p>';
-            echo '<a href="#" class="card-button">Comprar</a>';
-        echo '</div>';
-    echo'</div>';
-    $stmt->close();
-}
-echo '</div>'; // Cierra el div containerç
-}
+        echo '<hr>';
+        echo'<div class="container">';
+        for ($j = 0; $j < count($idValidadas); $j++){
+            if($j == intval(count($idValidadas)/2)){
+                echo '<div id="mensaje">';
+                    echo '<h5 class="card-title">'.$mensajitos[1].'</h5>';
+                echo '</div>';
+                echo '<hr>';
+            }
+            $consulta2 = "SELECT * FROM `Zapatillas` WHERE `IdZapatilla` = ?";
+
+            // Crear una sentencia preparada
+            $stmt = $conexion->prepare($consulta2);
+
+            // Vincular el parámetro
+            $stmt->bind_param("i", $idValidadas[$j]);
+            
+            // Ejecutar la consulta
+            $stmt->execute();
+
+            $resultados = ($stmt->get_result())->fetch_assoc();
+
+            //Consulta de la imagen de la zapatilla
+            $consulta3 = "SELECT * FROM `Fotos` WHERE `IdZapatilla` = $idValidadas[$j]";
+            $resultado2 = $conexion->query($consulta3);
+            $fila2 = $resultado2->fetch_assoc();
+
+            $blob = base64_encode($fila2['Foto']);
+
+            //El nombre si tiene más de 17 caracteres se corta
+            $nombre = (strlen($resultados['Nombre']) > 15) ? substr($resultados['Nombre'], 0, 14) . '...' : $resultados['Nombre'];
+
+            echo '<div class="card">';
+                echo '<div class="imgContainer">';
+                    echo '<img src="data:image/jpeg;base64,'. $blob .'" alt="...">';
+                echo '</div>';
+                echo '<div class="card-body">';
+                    echo '<h5 class="card-title">'.$nombre.'</h5>';
+                    echo '<p class="card-text" e='."$resultados[IdZapatilla]".'>'.$resultados['Precio'].'€</p>';
+                    echo '<a href="#" class="card-button">Comprar</a>';
+                echo '</div>';
+            echo'</div>';
+            $stmt->close();
+        }
+        echo '</div>'; // Cierra el div containerç
+    }
+
 ?>
 </body>
