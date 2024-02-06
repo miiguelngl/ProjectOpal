@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['pt'])  && $_GET['pt'] !
     $e = 1;
 }
 
-for ($i = 1; $i <= $e; $i++) {
+// for ($i = 1; $i <= $e; $i++) {
     $consulta4 = "SELECT * FROM `Zapatillas` $condi";
     $stmt4 = $conexion->prepare($consulta4);
 
@@ -31,14 +31,18 @@ for ($i = 1; $i <= $e; $i++) {
 
         $stmt4->close(); // Cierra la declaración preparada
     }
-}
+// }
 
 shuffle($idValidadas);
 if(count($idValidadas)==0){
     echo "<p class='text-center'>No hay resultados</p>";
 }else{
-echo '<h5 class="card-title">'.$mensajitos[$i].'</h5>';
-echo '<div class="container">';
+    echo '<div class="container">';
+    echo '<div id="mensaje">';
+        echo '<h5 class="card-title">'.$mensajitos[0].'</h5>';
+    echo '</div>';
+    echo '<hr>';
+    echo'<div class="container">';
 for ($j = 0; $j < count($idValidadas); $j++){
     
     $consulta2 = "SELECT * FROM `Zapatillas` WHERE `IdZapatilla` = ?";
