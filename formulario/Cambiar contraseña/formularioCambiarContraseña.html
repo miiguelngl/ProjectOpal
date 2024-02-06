@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/normalize.css">
+    <link rel="stylesheet" href="../../css/signIn.css">
+    <link rel="stylesheet" href="../fonts/material-icon/css/material-design-iconic-font.min.css">
+    <script defer src="../../js/validacionContraseña.js"></script>
+    <title>Opal</title>
+</head>
+<body>
+    <main>
+        <div id="formulario">
+            <img src="../../img/LogoOpal.png" alt="" height="100px">
+            <div class="signin-form">
+                <h2>Recuperar contraseña</h2>
+                <form method="POST" class="register-form" id="login-form" action="signIn.php">
+                    <div class="datosLogIn">
+                        <label for="email"><i class="zmdi zmdi-email"></i></label>
+                        <input type="email" name="email" id="email" placeholder="Email"/>
+                    </div>
+                    <div class="form-button">
+                        <input type="submit" name="signin" id="signin" class="form-submit" value="Recuperar"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

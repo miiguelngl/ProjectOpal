@@ -39,33 +39,18 @@
     
                 if($result3->num_rows > 0) {
                     $arrayFoto = $result3->fetch_array(MYSQLI_ASSOC);
-                    $imagenZapa = base64_encode($arrayFoto['Foto']);
-                    echo "<div class='container' id='caseCenter'>";
-                        echo "<div class='case'>";
-                            echo "<div id='userName'>";
-                                echo "<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22' fill='#5b85d9' class='bi bi-person-fill' viewBox='0 0 16 16'>";
-                                    echo "<path d='M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6'/>";
-                                echo "</svg>";
-                                echo "<h4>".$arrayUsu['Apodo']."</h4>";
-                            echo "</div>";        
+                    $imagenZapa = base64_encode($arrayFoto['Foto']);    
                             echo "<div id='caseProduct'>";
                                 echo "<div id='caseProductImg'>";
                                     echo "<img src='data:image/jpeg;base64, $imagenZapa' alt='Imagen del usuario'>";
                                 echo "</div>";
-                                echo "<div id='caseProductInfo'>";
+                            echo "</div>";
+                            echo "<div id='caseProductInfo'>";
                                     echo "<h3>".$arrayZapa['Nombre']."</h3>";
                                     echo "<h5>".$arrayZapa['Marca']."</h5>";
-                                    echo "<p>".$arrayZapa['Precio']."€</p>";
-                                    echo "<a href='#' class='card-button'>Comprar</a>";
-                                echo "</div>";
+                                    echo "<p>Vendido por ".$arrayUsu['Apodo']."</p>";
+                                    // echo "<p>".$arrayZapa['Precio']."€</p>";
                             echo "</div>";
-                            echo "<hr>";
-                            echo "<div>";
-                                    echo "<h3>Descripcion del producto</h3>";
-                                    echo "<p>".$arrayZapa['Descripcion']."</p>";
-                            echo "</div>";
-                        echo "</div>";
-                    echo "</div>";  
                 }
             }
          }      

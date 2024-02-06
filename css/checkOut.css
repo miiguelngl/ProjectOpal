@@ -16,18 +16,14 @@ body{
 h3, h4{
     font-family: var(--exo2);
     margin-top: 12px;
-    margin-bottom: 12px;
     color: var(--tercer);
     font-weight: 700;
 }
-#userName{
+#posicionCase{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-}
-#userName svg{
-    margin-right: 8px;
-    margin-top: 2px;
+    justify-content: space-evenly;
 }
 .card-button{
     background-color: var(--tercer);
@@ -37,7 +33,6 @@ h3, h4{
     text-decoration: none;
     font-family: var(--exo2);
     font-weight: 600;
-    margin-bottom: 8px;
 }
 
 .case{
@@ -47,6 +42,13 @@ h3, h4{
     padding: 18px;
     margin-bottom: 26px;
     margin-top: 26px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+hr{
+    width: 90%;
+    margin-top: -2px;
 }
 #caseCenter{
     display: flex;
@@ -68,6 +70,7 @@ h3, h4{
     max-width: 450px;
     max-height: 450px;
     margin-bottom: 12px;
+    object-fit: cover;
 }
 #caseProductInfo { 
     padding: 6px;
@@ -78,57 +81,75 @@ h3, h4{
     flex-direction: column;
     justify-content: center;
 }
+#formularioContacto{
+    background-color: var(--principal);
+    border-radius: 25px;
+    padding: 16px;
+    width: 100%;
+}
+#formularioContacto form{
+    display: flex;
+    flex-direction: column;
+}
+
+/* -- FORMULARIO -- */
+label{
+    margin-bottom: 4px;
+    font-family: var(--exo2);
+    font-weight: 500;
+}
+input, textarea, select{
+    margin-bottom: 8px;
+    border-radius: 12px;
+    border: 0px;
+}
+textarea{
+    resize: none;
+    padding: 4px;
+}
+input{
+    padding: 4px;
+}
+#enviar{
+    background-color: var(--tercer);
+    color: var(--principal);
+    font-weight: 700;
+    width: 25%;
+    margin: auto;
+    margin-top: 8px;
+}
+.form-row{
+    display: flex;
+    flex-direction: row;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
 /* -- RESPONSIVE -- */
 @media only screen and (max-width: 600px){
 
 }
 @media only screen and (min-width: 601px) and (max-width: 960px){
-    .case{
-        width: 75%;
-    }
-    #caseProduct {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        grid-column-gap: 0px;
-        grid-row-gap: 0px;
-    }
-    #caseProductImg { 
-        grid-area: 1 / 1 / 2 / 2; 
-    }
-    #caseProductInfo { 
-        grid-area: 1 / 2 / 2 / 3; 
-    }
-    #caseProductImg img{
-        width: 90%;
-        margin-bottom: 0px;
-    }
+
 }
 
 @media only screen and (min-width: 960px){
     h5{
         font-size: 20px;
     }
-    .caseProfile{
+    #posicionCase{
         display: flex;
         flex-direction: row;
+        justify-content: space-evenly;
+        align-items: normal;
     }
     .case{
-        width: 60%;
-    }
-    #caseProduct {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        grid-column-gap: 0px;
-        grid-row-gap: 0px;
-    }
-    #caseProductImg { 
-        grid-area: 1 / 1 / 2 / 2; 
-    }
-    #caseProductInfo { 
-        grid-area: 1 / 2 / 2 / 3; 
-    }
-    #caseProductImg img{
-        width: 90%;
-        margin-bottom: 0px;
+        width: 40%;
     }
 }

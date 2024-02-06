@@ -34,9 +34,15 @@ h5{
     margin: 16px;
     flex-direction: column;
 }
-.caseProfile img{
+#imgProfile{
     border-radius: 50%;
     height: 200px;
+    width: 200px;
+    overflow: hidden;
+    background-color: var(--secundario);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .ventas{
     margin-left: 18px;
