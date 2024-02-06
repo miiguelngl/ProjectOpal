@@ -20,7 +20,15 @@ h3, h4{
     color: var(--tercer);
     font-weight: 700;
 }
-
+#userName{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#userName svg{
+    margin-right: 8px;
+    margin-top: 2px;
+}
 .card-button{
     background-color: var(--tercer);
     color: var(--principal);

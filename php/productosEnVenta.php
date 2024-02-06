@@ -37,7 +37,7 @@
                             echo '</div>';
                             echo '<div class="card-body" alt="...">';
                                 echo '<h5 class="card-title">'.$nombre.'</h5>';
-                                echo '<p class="card-tex">'.$filaZapatilla['Precio'].'€</p>';
+                                echo '<p class="card-tex" e="'.$filaZapatilla['IdZapatilla'].'">'.$filaZapatilla['Precio'].'€</p>';
                             echo '</div>';
                         echo'</div>';
                     }

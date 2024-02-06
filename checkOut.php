@@ -15,21 +15,37 @@
         include './php/header.php';
     ?>
     <main>
-        <div class="container" id="caseCenter">
+        <div class="container" id="posicionCase">
             <div class="case">
                 <h4>Realizar compra</h4>
                 <hr>
-                <div id="caseProduct">
-                    <div id="caseProductImg">
-                        <img src="img/Nike Dunk Low Olive-125.webp" alt="">
-                    </div>
-                    <div id="caseProductInfo">
-                        <h3>Jordan Air 1</h3>
-                        <h5>Nike</h5>
-                        <p>250€</p>
-                    </div>
+                <div id="formularioContacto">
+                    <form action="procesar_formulario.php" method="post" enctype="multipart/form-data">
+                        <label for="correo">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Nombre..." required>
+
+                        <label for="telefono">Número de teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="Teléfono...">
+
+                        <label for="asunto">Dirección:</label>
+                        <input type="text" id="direccion" name="direccion" placeholder="Dirección de envío..." required>
+
+                        <label for="asunto">Código postal:</label>
+                        <input type="number" min="0" pattern="[0-9]{5}" id="direccion" name="direccion" placeholder="CP..." required>
+
+                        <label for="descripcion">Observaciones:</label>
+                        <textarea id="descripcion" name="descripcion" rows="4" placeholder="Dejar en recepción, dejarselo al conserje..." required></textarea>
+                    
+                        <input type="submit" id="enviar" value="Enviar">
+                    </form>
                 </div>
-                
+            </div>
+            <div class="case">
+                <h4>Producto</h4>
+                <hr>
+                <?php
+                    include './php/productoCheckOut.php';
+                ?>
             </div>
         </div>
     </main>
