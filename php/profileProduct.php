@@ -53,7 +53,7 @@
                                     echo "<img src='data:image/jpeg;base64, $imagenZapa' alt='Imagen del usuario'>";
                                 echo "</div>";
                                 echo "<div id='caseProductInfo'>";
-                                    echo "<h3>".$arrayZapa['Nombre']."</h3>";
+                                    echo "<h3 class='text-center'>".$arrayZapa['Nombre']."</h3>";
                                     echo "<h5>".$arrayZapa['Marca']."</h5>";
                                     echo "<p>".$arrayZapa['Precio']."€</p>";
                                     echo "<a href='#' class='card-button'>Comprar</a>";
