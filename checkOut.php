@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/checkOut.css">
     <script defer src="js/menuDesplegable.js"></script>
+    <script defer src="js/inputID.js"></script>
     <title>Opal</title>
 </head>
 <body>
@@ -21,7 +22,7 @@
                 <h4>Realizar compra</h4>
                 <hr>
                 <div id="formularioContacto">
-                    <form action="procesar_formulario.php" method="post" enctype="multipart/form-data">
+                    <form action="formulario/ProductoComprado/venderProducto.php" method="post" enctype="multipart/form-data">
                         <label for="correo">Nombre:</label>
                         <input type="text" id="nombre" name="nombre" placeholder="Nombre..." required>
 
@@ -47,6 +48,8 @@
                                 <input type="number" min="0" pattern="[0-9]{3}" id="direccion" name="direccion" placeholder="CVV..." required>
                             </div>
                         </div>
+
+                        <input type="number" id="id" name="id" class="d-none">
 
                         <input type="submit" id="enviar" value="Enviar">
                     </form>
