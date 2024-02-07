@@ -11,7 +11,7 @@
     $condicion = '';
 
     if ($campo != '') {
-        $condicion = 'WHERE (';
+        $condicion = 'WHERE `Validada` = 1 AND (';
 
         for ($i = 0; $i < count($columnas); $i++) {
             $condicion .= $columnas[$i] . " LIKE '%" . $campo . "%' OR ";

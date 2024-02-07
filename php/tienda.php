@@ -44,9 +44,8 @@ if(count($idValidadas)==0){
         echo '</div>';
         echo '<hr>';
         echo'<div class="container">';
-        for ($j = 0; $j < count($idValidadas); $j++){
-            if($j == intval(count($idValidadas)/2)){
-                echo '<div id="mensaje">';
+        for ($j = 0; $j < count($idValidadas) && $j < 24; $j++){
+            if($j == intval(count($idValidadas)/2) && count($idValidadas)>6){                echo '<div id="mensaje">';
                     echo '<h5 class="card-title">'.$mensajitos[1].'</h5>';
                 echo '</div>';
                 echo '<hr>';
