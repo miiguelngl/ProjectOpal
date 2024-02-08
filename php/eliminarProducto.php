@@ -28,7 +28,7 @@
             $stmt->bind_param("s", $id);
             $stmt->execute();
 
-            header("Location: ../../index.php");
+            header("Location: ../index.php");
         }
     }else{
         header("Location: ../IniciarSesion/signIn.html");
