@@ -211,6 +211,11 @@ footer{
 }#tecla { 
     display: none;
 }
+.aBuscador{
+    text-decoration: none;
+    color: var(--secundario);
+    font-family: var(--karla);
+}
 /* -- RESPONSIVE -- */
 @media only screen and (max-width: 600px){
 

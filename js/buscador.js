@@ -25,7 +25,7 @@ function Datos(event){
                 content.innerHTML = '';
                 if(data[0] != undefined){
                     data.forEach(item => {
-                        content.innerHTML += '<li><a href="./producto.php?pt='+ item.IdZapatilla + '">' + item.Nombre + '</li>';
+                        content.innerHTML += '<li><a class="aBuscador" href="./producto.php?pt='+ item.IdZapatilla + '">' + item.Nombre + '</li>';
                     }); 
                 }else{
                     content.style.border = "none";
