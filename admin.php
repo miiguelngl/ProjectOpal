@@ -35,7 +35,6 @@ if(isset($_SESSION["Usu"])){
         
         if($array["Admin"] == 1){
             //CONTENIDO DEL ADMIN.PHP
-            
 
             //MOSTRAR TODAS LAS ZAPATILLAS NO VALIDADAS
 
@@ -51,7 +50,17 @@ if(isset($_SESSION["Usu"])){
                 echo "<table>";
                 echo "<tr><th>Nombre</th><th>Marca</th><th>Talla</th><th>Precio</th><th>Estado  </th></tr>";
                 while ($array2 = $result2->fetch_assoc()) {
-                    echo "<tr><td><a href='./producto.php?pt=".$array2['IdZapatilla']."'>".$array2['Nombre']."</a></td><td>".$array2['Marca']."</td><td>".$array2['Talla']."</td><td>".$array2['Precio']."€</td><td><button type='button' class='btn btn-success'>VALIDAR</button><button type='button' class='btn btn-danger'>ELIMINAR</button></td></tr>";
+                    echo "<tr><td><a href='./producto.php?pt=".$array2['IdZapatilla']."'>".$array2['Nombre']."</a></td><td>".$array2['Marca']."</td><td>".$array2['Talla']."</td><td>".$array2['Precio']."€</td>
+                    <td>
+                    <form action='php/validarProducto.php' method='post' enctype='multipart/form-data'>
+                        <input type='number' id='id' name='id' class='d-none' value='".$array2['IdZapatilla']."'>
+                        <input type='submit' id='enviar' class='btn btn-success' value='VALIDAR'>
+                    </form>
+                    <form action='php/eliminarProducto.php' method='post' enctype='multipart/form-data'>
+                        <input type='number' id='id' name='id' class='d-none' value='".$array2['IdZapatilla']."'>
+                        <input type='submit' id='enviar' class='btn btn-danger' value='ELIMINAR'>
+                    </form>
+                    </td></tr>";
                 }
                 echo "</table>";
             }else{
@@ -66,7 +75,6 @@ if(isset($_SESSION["Usu"])){
     }else{
         echo("<h4>ERROR 404 NOT FOUND<h5>");
     }
-    include "./php/footer.php";
 
 ?>
 </body>

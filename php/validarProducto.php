@@ -18,21 +18,14 @@
         $conexion = new mysqli($servidor, $username, $password, $base);
 
         if($conexion) {
-            $consulta1 = "DELETE FROM `Fotos` WHERE `IdZapatilla` = ?";
+            $consulta1 = "UPDATE `zapatillas` SET `Validada` = '1' WHERE `zapatillas`.`IdZapatilla` = ?;";
             $stmt = $conexion->prepare($consulta1);
             $stmt->bind_param("s", $id);
             $stmt->execute();
-        
-            $consulta2 = "DELETE FROM `Zapatillas` WHERE IdZapatilla = ?";
-            $stmt = $conexion->prepare($consulta2);
-            $stmt->bind_param("s", $id);
-            $stmt->execute();
 
-            header("Location: ../../index.php");
+            header("Location: ../admin.php");
         }
     }else{
         header("Location: ../IniciarSesion/signIn.html");
     }
 ?>
-    
-    
