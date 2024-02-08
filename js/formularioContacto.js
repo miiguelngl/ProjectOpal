@@ -29,8 +29,7 @@ function compruebaTlf() {
             div.id = "errorTlf";
             cmpTlf.parentNode.insertBefore(div, cmpTlf.nextSibling);
             div.style.color = "red";
-            div.innerHTML = "El numero de telefono es incorrecto";
-            cmpTlf.focus();            
+            div.innerHTML = "El numero de telefono es incorrecto";         
         }
     },0);
 }
@@ -53,7 +52,6 @@ function compruebaEmail() {
             div.style.color = "red";
             cmpCorreo.parentNode.insertBefore(div, cmpCorreo.nextSibling);
             div.innerHTML = "El correo es incorrecto";
-            cmpCorreo.focus();
         }
     },0)
 }
@@ -74,7 +72,6 @@ function compruebaAsunto() {
             div.style.color = "red";
             cmpAsunto.parentNode.insertBefore(div, cmpAsunto.nextSibling);
             div.innerHTML = "El asunto es incorrecto";
-            cmpAsunto.focus();
         }
     }, 0);
 }
