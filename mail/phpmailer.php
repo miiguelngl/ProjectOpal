@@ -19,7 +19,7 @@ try {
     * SMTP username y password Poned los vuestros. La contraseña es la que nos generó GMAIL
     */
     $mail->Username   = 'opalservice@outlook.es';             
-    $mail->Password   = 'Yovoyahaceruncorral';    
+    $mail->Password   = '';    
     /*
     * Encriptación a usar ssl o tls, dependiendo cual usemos hay que utilizar uno u otro puerto
     */            
