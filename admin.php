@@ -55,9 +55,12 @@ if(isset($_SESSION["Usu"])){
                     <form action='php/validarProducto.php' method='post' enctype='multipart/form-data'>
                         <input type='number' id='id' name='id' class='d-none' value='".$array2['IdZapatilla']."'>
                         <input type='submit' id='enviar' class='btn btn-success' value='VALIDAR'>
-                    </form></td></tr>";
-                    // <button type='button' class='btn btn-success'>VALIDAR</button>
-                    // <button type='button' class='btn btn-danger'>ELIMINAR</button></td></tr>
+                    </form>
+                    <form action='php/eliminarProducto.php' method='post' enctype='multipart/form-data'>
+                        <input type='number' id='id' name='id' class='d-none' value='".$array2['IdZapatilla']."'>
+                        <input type='submit' id='enviar' class='btn btn-danger' value='ELIMINAR'>
+                    </form>
+                    </td></tr>";
                 }
                 echo "</table>";
             }else{

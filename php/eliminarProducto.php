@@ -34,5 +34,3 @@
         header("Location: ../IniciarSesion/signIn.html");
     }
 ?>
-    
-    
