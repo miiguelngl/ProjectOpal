@@ -1,24 +1,29 @@
 <?php
 include("conexion.php");
-$consulta1 = "SELECT MAX(`IdZapatilla`) AS total FROM `Zapatillas`";
+$consulta1 = "SELECT * FROM `Zapatillas` WHERE `Validada` = 1 ";
 $resultado = $conexion->query($consulta1);
 if ($resultado) {
     
     //Obtiene los resultados de la consulta como una array asociativo
-    $fila = $resultado->fetch_assoc();
-    $array = range(1, $fila['total']);
-    shuffle($array);
+
+    $idZapatillas = [];
+    
+        while($array = $resultado->fetch_assoc()){
+            $idZapatillas [] = $array['IdZapatilla'];
+    
+         
+    }
     // Obtener el valor de la columna 'total'
-    $totalZapatillas = $fila['total'];
+    shuffle($idZapatillas);
 
     for ($i = 1; $i <= 5; $i++) {
         //Consulta de la zapatila
-        $consulta2="SELECT * FROM `Zapatillas` WHERE `IdZapatilla` = $array[$i]"; 
+        $consulta2="SELECT * FROM `Zapatillas` WHERE `IdZapatilla` = $idZapatillas[$i]"; 
         $resultado = $conexion->query($consulta2);
         $fila = $resultado->fetch_assoc();
         
         //Consulta de la imagen de la zapatilla
-        $consulta3 = "SELECT * FROM `Fotos` WHERE `IdZapatilla` = $array[$i]";
+        $consulta3 = "SELECT * FROM `Fotos` WHERE `IdZapatilla` = $idZapatillas[$i]";
         $resultado2 = $conexion->query($consulta3);
         $fila2 = $resultado2->fetch_assoc();
         

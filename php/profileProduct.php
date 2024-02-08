@@ -55,6 +55,7 @@
                                 echo "<div id='caseProductInfo'>";
                                     echo "<h3 class='text-center'>".$arrayZapa['Nombre']."</h3>";
                                     echo "<h5>".$arrayZapa['Marca']."</h5>";
+                                    echo "<h5>Talla: ".$arrayZapa['Talla']."</h5>";
                                     echo "<p>".$arrayZapa['Precio']."€</p>";
                                     echo "<a href='#' class='card-button'>Comprar</a>";
                                 echo "</div>";

@@ -48,6 +48,7 @@
                             echo "<div id='caseProductInfo'>";
                                     echo "<h3>".$arrayZapa['Nombre']."</h3>";
                                     echo "<h5>".$arrayZapa['Marca']."</h5>";
+                                    echo "<h5>Talla: ".$arrayZapa['Talla']."</h5>";
                                     echo "<p>Vendido por ".$arrayUsu['Apodo']."</p>";
                                     // echo "<p>".$arrayZapa['Precio']."€</p>";
                             echo "</div>";

@@ -28,11 +28,11 @@
             $stmt->bind_param("s", $id);
             $stmt->execute();
 
-            $actualizarIds = "SET @num := 0; UPDATE `Zapatillas` SET `IdZapatilla` = @num := @num + 1; ALTER TABLE `Zapatillas` AUTO_INCREMENT = 1;";
-            $conexion->query($actualizarIds);
+            // $actualizarIds = "SET @num := 0; UPDATE `Zapatillas` SET `IdZapatilla` = @num := @num + 1; ALTER TABLE `Zapatillas` AUTO_INCREMENT = 1;";
+            // $conexion->query($actualizarIds);
 
-            $actualizarIdsFotos = "SET @num := 0; UPDATE `Fotos` SET `IdFoto` = @num := @num + 1; ALTER TABLE `Fotos` AUTO_INCREMENT = 1;";
-            $conexion->query($actualizarIdsFotos);
+            // $actualizarIdsFotos = "SET @num := 0; UPDATE `Fotos` SET `IdFoto` = @num := @num + 1; ALTER TABLE `Fotos` AUTO_INCREMENT = 1;";
+            // $conexion->query($actualizarIdsFotos);
 
             header("Location: ../../index.php");
         }
