@@ -45,7 +45,7 @@
                     <label for="precio">Precio Sugerido:</label>
                     <input type="number" id="precio" name="precio" step="any" placeholder="No te pases..." required>
 
-                    <input type="submit" id="precio" value="Enviar">
+                    <input type="submit" id="precio" name="enviar" value="Enviar">
                 </form>
             </div>
         </div>

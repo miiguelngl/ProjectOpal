@@ -53,7 +53,7 @@
                 $stmt->bind_param("s", $contenidoImagen);//s porque es mediumblob
                 $stmt->execute();
 
-                header("Location: ../../index.php");
+                header("Location: ../confirmacionProducto.html");
             }
         }
     }else{

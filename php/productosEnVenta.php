@@ -1,5 +1,5 @@
 <div id="productos">
-    <h2>Productos en venta</h2>
+    <h2>Productos</h2>
     <?php
     error_reporting(E_ALL);
     ini_set('display_errors', '1');
@@ -42,6 +42,11 @@
                             echo '<div class="card-body" alt="...">';
                                 echo '<h5 class="card-title">'.$nombre.'</h5>';
                                 echo '<p class="card-tex" e="'.$filaZapatilla['IdZapatilla'].'">'.$filaZapatilla['Precio'].'€</p>';
+                                if ($filaZapatilla['Validada'] == 1) {
+                                    echo '<p>Estado: En venta</p>';
+                                }else{
+                                    echo '<p>Estado: Sin validar</p>';
+                                }
                             echo '</div>';
                         echo'</div>';
                     }
