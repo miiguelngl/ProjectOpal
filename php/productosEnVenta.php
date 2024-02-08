@@ -1,18 +1,22 @@
 <div id="productos">
     <h2>Productos en venta</h2>
     <?php
+    error_reporting(E_ALL);
+    ini_set('display_errors', '1');
         include "conexion.php";
         $consulta1 = "SELECT * FROM `Usuario` WHERE `Apodo` = ?";
         $username = $_SESSION['Usu'];
+        $validada = 1;
         $stmt = $conexion->prepare($consulta1);
         $stmt->bind_param("s", $username);
+        
         $exito = $stmt->execute();
         if ($exito) {
             $resultado = $stmt->get_result();
             $fila = $resultado->fetch_assoc();
-            $consulta2 = "SELECT * FROM `Zapatillas` WHERE `IdUsuario` = ?";
+            $consulta2 = "SELECT * FROM `Zapatillas` WHERE `IdUsuario` = ?  AND `Validada` = ?";
             $stmt = $conexion->prepare($consulta2);
-            $stmt->bind_param("s", $fila['IdUsuario']);
+            $stmt->bind_param("ss", $fila['IdUsuario'], $validada);
             $exito = $stmt->execute();
             if ($exito) {
                 $resultadoZapatillas = $stmt->get_result();

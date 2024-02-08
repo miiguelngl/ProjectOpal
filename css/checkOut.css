@@ -120,7 +120,7 @@ input{
 }
 .form-row{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
@@ -151,5 +151,9 @@ input[type="number"] {
     }
     .case{
         width: 40%;
+    }
+    .form-row{
+        display: flex;
+        flex-direction: row;
     }
 }
