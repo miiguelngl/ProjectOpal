@@ -1,30 +1,9 @@
 window.onload = function(){
-    document.getElementById("nombre").addEventListener("blur", comprobarNombre);
     document.getElementById("precio").addEventListener("blur",comprobarPrecio);
     document.getElementById("descripcion").addEventListener("input", actualizaText);
     document.getElementById("descripcion").addEventListener("blur", quitarMensaje);
     document.getElementById("talla").addEventListener("blur", comprobarTalla);
     document.getElementById("enviar").addEventListener("click", compruebaImg);
-}
-
-function comprobarNombre() {
-    let cmpNombre = document.getElementById("nombre");
-    let nombre = cmpNombre.value;
-    let mensajeError = document.getElementById("errorNom");
-        if (mensajeError) {
-            mensajeError.remove();
-        }
-
-    setTimeout(() => {                       
-        if(!/^[a-z\sA-Z]+$/.test(nombre)){
-        let div = document.createElement("div");
-        div.id = "errorNom";         
-        div.style.color = "red";
-        div.textContent = "El nombre introducido es incorrecto";
-        cmpNombre.parentNode.insertBefore(div, cmpNombre.nextSibling);
-        cmpNombre.focus();
-        };
-    }, 0);
 }
 
 function comprobarPrecio(){
@@ -42,7 +21,6 @@ function comprobarPrecio(){
         div.style.color = "red";
         div.textContent = "El precio introducido es incorrecto";
         cmpPrecio.parentNode.insertBefore(div, cmpPrecio.nextSibling);
-        cmpPrecio.focus();
         };
     }, 0);
 };
@@ -95,7 +73,6 @@ function comprobarTalla() {
         div.style.color = "red";
         div.textContent = "La talla introducida es incorrecta";
         cmpTalla.parentNode.insertBefore(div, cmpTalla.nextSibling);
-        cmpTalla.focus();
         };
     }, 0);
 }

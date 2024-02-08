@@ -68,5 +68,6 @@
     <?php
         include './php/footer.php';
     ?>
+    <script src="js/formularioContacto.js"></script>
 </body>
 </html>
