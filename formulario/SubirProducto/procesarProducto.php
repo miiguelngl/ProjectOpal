@@ -30,7 +30,7 @@
         
         if ($resultado) { //Comprueba 
             $fila = $resultado->fetch_row();
-            $idZa = $fila[0] + 1;
+            
 
             //consulta para saber el idUsuario
             $consulta2 = "SELECT `IdUsuario` FROM `Usuario` WHERE `Apodo` = '$Us'";
@@ -42,7 +42,8 @@
                 //Inserta Zapatilla a la bbdd
                 $subida = "INSERT INTO `Zapatillas` (Nombre, Marca, Descripcion, Validada, Talla, Precio, IdUsuario) VALUES ('$nombre', '$marca', '$desc', 0, '$talla', '$precio', '$idUsuario')";
                 $conexion->query($subida);
-    
+                $idZa = $conexion->insert_id;
+                
                 //Inserta Foto a la bbdd
                 $contenidoImagen = file_get_contents($foto["tmp_name"]); // Lee el contenido de la imagen
                 $subidaFoto = "INSERT INTO `Fotos` (IdZapatilla, Foto) VALUES ('$idZa', ?)";
