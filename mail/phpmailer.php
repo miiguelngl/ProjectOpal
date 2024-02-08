@@ -39,7 +39,7 @@ try {
 //Remitente
     $mail->setFrom('opalservice@outlook.es', 'Opal');
 //Receptores. Podemos añadir más de uno. El segundo argumento es opcional, es el nombre
-    $mail->addAddress('04mangel@gmail.com', 'Miguel');     //Add a recipient
+    $mail->addAddress('other@gmail.com', '');     //Add a recipient
     //$mail->addAddress('ejemplo@example.com'); 
 
     //Copia
