@@ -1,110 +1,86 @@
-window.addEventListener("load", () =>{
-    document.getElementById("descripcion").setAttribute("maxlength", 400);
+window.addEventListener("load", () => {
+    const descripcionInput = document.getElementById("descripcion");
+    descripcionInput.setAttribute("maxlength", 200);
+    descripcionInput.addEventListener("input", compruebaDescripcion);
+    descripcionInput.addEventListener("blur", borraMssgError);
+    descripcionInput.addEventListener("focus", borraMssgError);
+
     document.getElementById("telefono").addEventListener("blur", compruebaTlf);
+    document.getElementById("telefono").addEventListener("input", borraMssgError); 
     document.getElementById("correo").addEventListener("blur", compruebaEmail);
+    document.getElementById("correo").addEventListener("input", borraMssgError);
     document.getElementById("asunto").addEventListener("blur", compruebaAsunto);
-    document.getElementById("descripcion").addEventListener("input", compruebaDescripcion);
-    document.getElementById("descripcion").addEventListener("blur", borraMssgError);
+    document.getElementById("asunto").addEventListener("input", borraMssgError);
 });
 
+function mostrarMensajeError(elemento, mensaje) {
+    const mssgError = document.getElementById(`compr${elemento}`);
+    if (mssgError) {
+        mssgError.remove();
+    }
+
+    if (mensaje) {
+        elemento.insertAdjacentHTML('afterend', `<div id="compr${elemento}" style="color: red">${mensaje}</div>`);
+        elemento.focus();
+    }
+}
+
 function compruebaTlf() {
-    let cmpTlf = document.getElementById("telefono");
-    let tlf = cmpTlf.value;
-    let num = false;
+    const cmpTlf = document.getElementById("telefono");
+    const tlf = cmpTlf.value.trim();
 
-    setTimeout(() =>{
-        if (tlf.length == 9 && !isNaN(parseInt(tlf))) {
-            num = true;
-        }else{
-            num = false;
-        }
+    const div = document.getElementById("errorTlf");
+    if (div) {
+        div.remove();
+    }
 
-        let div = document.getElementById("errorTlf");
-        if (div) {
-            div.remove();
-        }
-        
-        if (!num) {
-            let div = document.createElement("div");
-            div.id = "errorTlf";
-            cmpTlf.parentNode.insertBefore(div, cmpTlf.nextSibling);
-            div.style.color = "red";
-            div.innerHTML = "El numero de telefono es incorrecto";
-            cmpTlf.focus();            
-        }
-    },0);
+    if (tlf.length !== 9 || isNaN(Number(tlf))) {
+        mostrarMensajeError(cmpTlf, "El número de teléfono es iválido");
+    }else{
+        mostrarMensajeError(cmpTlf, "");
+    }
 }
 
 function compruebaEmail() {
-    let cmpCorreo = document.getElementById("correo");
-    let correo = cmpCorreo.value;
-    let mssgError = document.getElementById("comprEmail")
+    const cmpCorreo = document.getElementById("correo");
+    const correo = cmpCorreo.value;
 
-    if (mssgError) {
-        mssgError.remove();
+    const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!regexCorreo.test(correo)) {
+        mostrarMensajeError(cmpCorreo, "El correo es incorrecto");
+    }else{
+        mostrarMensajeError(cmpCorreo, "");
     }
-
-    setTimeout(()=>{
-        const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-        if (!regexCorreo.test(correo)) {
-            let div = document.createElement("div");
-            div.id = "comprEmail";
-            div.style.color = "red";
-            cmpCorreo.parentNode.insertBefore(div, cmpCorreo.nextSibling);
-            div.innerHTML = "El correo es incorrecto";
-            cmpCorreo.focus();
-        }
-    },0)
 }
 
 function compruebaAsunto() {
-    let cmpAsunto = document.getElementById("asunto");
-    let asunto = cmpAsunto.value;
-    let mssgError = document.getElementById("comprAsunto");
+    const cmpAsunto = document.getElementById("asunto");
+    const asunto = cmpAsunto.value;
 
-    if (mssgError) {
-        mssgError.remove();
+    if (asunto.length <= 0) {
+        mostrarMensajeError(cmpAsunto, "El asunto es incorrecto");
     }
-
-    setTimeout(() => {
-        if (asunto.length <= 0) {
-            let div = document.createElement("div");
-            div.id = "comprAsunto";
-            div.style.color = "red";
-            cmpAsunto.parentNode.insertBefore(div, cmpAsunto.nextSibling);
-            div.innerHTML = "El asunto es incorrecto";
-            cmpAsunto.focus();
-        }
-    }, 0);
 }
 
 function compruebaDescripcion() {
-    let cmpDesc = document.getElementById("descripcion");
-    let descripcion = cmpDesc.value;
+    const cmpDesc = document.getElementById("descripcion");
+    const descripcion = cmpDesc.value;
 
-    let mssgMostrado = document.getElementById("infoCaracteres");
+    const mssgMostrado = document.getElementById("infoCaracteres");
     if (mssgMostrado) {
         mssgMostrado.remove();
     }
-    
-    if (descripcion.length < 400) {
-        let div = document.createElement("div");
-        div.id = "infoCaracteres";
-        div.style.color = "#5B85D9";
-        cmpDesc.parentNode.insertBefore(div, cmpDesc.nextSibling);
-        div.innerHTML = "Puedes seguir escribiendo..."
-    }else{
-        let div = document.createElement("div");
-        div.id = "infoCaracteres";
-        div.style.color = "red";
-        cmpDesc.parentNode.insertBefore(div, cmpDesc.nextSibling);
-        div.innerHTML = "Has llegado al limite";
+
+    if (descripcion.length < 200) {
+       mostrarMensajeError(cmpDesc, "");
+    } else {
+        mostrarMensajeError(cmpDesc, "Has llegado al límite");
     }
 }
 
 function borraMssgError() {
-    let mssgMostrado = document.getElementById("infoCaracteres");
+    const mssgMostrado = document.getElementById("infoCaracteres");
     if (mssgMostrado) {
         mssgMostrado.remove();
     }

@@ -34,7 +34,7 @@
                     </select> 
                 
                     <label for="descripcion">Descripción del Estado del Producto:</label>
-                    <textarea id="descripcion" name="descripcion" rows="4" maxlength="400" placeholder="Descripción de las sneakers..." required></textarea>
+                    <textarea id="descripcion" name="descripcion" rows="4" maxlength="200" placeholder="Descripción de las sneakers..." required></textarea>
                 
                     <label for="foto">Foto de la Zapatilla:</label>
                     <input type="file" id="foto" name="foto" accept="image/*" required>
@@ -44,8 +44,8 @@
 
                     <label for="precio">Precio Sugerido:</label>
                     <input type="number" id="precio" name="precio" step="any" placeholder="No te pases..." required>
-                
-                    <input type="submit" id="enviar" value="Enviar">
+
+                    <input type="submit" id="precio" value="Enviar">
                 </form>
             </div>
         </div>

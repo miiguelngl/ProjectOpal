@@ -72,10 +72,12 @@
                     <h2>Vuestras ventas</h2>
                     <a href="tienda.php">Ver todo...</a>
                 </div>
-                <div class="shopBody">
-                    <?php
-                        include './php/catalogo.php';
-                    ?>
+                <div class="shopBodyContent">
+                    <div class="shopBody">
+                        <?php
+                            include './php/catalogo.php';
+                        ?>
+                    </div>
                 </div>
             </div>
         </div>
@@ -88,7 +90,7 @@
                     Creemos que el estilo es una extensión de la identidad de cada individuo, 
                     y estamos aquí para ayudarte a encontrar las zapatillas que reflejen tu personalidad única.
                 </p>
-                <button><a href="">Leer más</a></button>
+                <button><a href="aboutUs.php">Leer más</a></button>
             </div>
         </div>
         <div id="sobreNosotrosPC">
@@ -115,10 +117,12 @@
                     <h2>Sneakers más baratas</h2>
                     <a href="tienda.php">Ver todo...</a>
                 </div>
-                <div class="shopBody">
-                    <?php
-                        include './php/catalogo.php';
-                    ?>
+                <div class="shopBodyContent">
+                    <div class="shopBody">
+                        <?php
+                            include './php/catalogo.php';
+                        ?>
+                    </div>
                 </div>
             </div>
         </div>

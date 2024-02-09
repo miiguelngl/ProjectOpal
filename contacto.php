@@ -9,6 +9,7 @@
     <link href="css/carousel.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/contacto.css">
+    <script defer src="js/formularioContacto.js"></script>
     <script defer src="js/menuDesplegable.js"></script>
     <title>Opal</title>
 </head>
