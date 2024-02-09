@@ -42,7 +42,7 @@
                         <div class="carousel-caption">
                           <h2>Servicios de Compra y Venta.</h2>
                           <p class="opacity-75">Entendemos que cada cliente es único, y así es como tratamos cada transacción. Nuestro servicio de compra y venta personalizado te permite encontrar las zapatillas que se adaptan a tus gustos y necesidades específicas.</p>
-                            <p><a class="btn btn-lg btn-dark" href="subirProducto.html">Subir producto</a></p>
+                            <p><a class="btn btn-lg btn-dark" href="subirProducto.php">Subir producto</a></p>
                         </div>
                     </div>
                 </div>
@@ -52,7 +52,7 @@
                         <div class="carousel-caption text-end">
                             <h2>Tu Satisfacción es Nuestra Prioridad.</h2>
                             <p>En Opal, la satisfacción del cliente es nuestra máxima prioridad. Nos esforzamos por ofrecer un servicio impecable desde el momento en que exploras nuestro catálogo hasta que recibes tus zapatillas en la puerta de tu hogar.</p>
-                            <p><a class="btn btn-lg btn-dark" href="#">Contáctanos</a></p>
+                            <p><a class="btn btn-lg btn-dark" href="contacto.php">Contáctanos</a></p>
                         </div>
                     </div>
                 </div>
@@ -107,7 +107,7 @@
                         Creemos que el estilo es una extensión de la identidad de cada individuo, 
                         y estamos aquí para ayudarte a encontrar las zapatillas que reflejen tu personalidad única.
                     </p>
-                    <button><a href="aboutUs.html">Leer más</a></button>
+                    <button><a href="aboutUs.php">Leer más</a></button>
                 </div>
             </div>
         </div>
