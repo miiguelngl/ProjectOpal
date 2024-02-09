@@ -3,7 +3,7 @@
 include("conexion.php");
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
-
+//Mensajes que se van a mostrar
 $mensajitos = array('Mucha gente las quiere','Renueva tu estilo','Mejora tu outfit','Combinan con todo','Sneakers recientes','Sube de nivel');
 shuffle($mensajitos);
 $idValidadas = [];
@@ -43,12 +43,44 @@ if(count($idValidadas)==0){
             echo '<h5 class="card-title">'.$mensajitos[0].'</h5>';
         echo '</div>';
         echo '<hr>';
-        echo'<div class="container">';
-        for ($j = 0; $j < count($idValidadas) && $j < 24; $j++){
-            if($j == intval(count($idValidadas)/2) && count($idValidadas)>6){                echo '<div id="mensaje">';
+        echo'<div class="containerBody">';
+        echo'<div class="containerBodyC">';
+        //Calcular las iteraciones del siguiente for
+        $totalZ = count($idValidadas);
+        $iteraciones;
+        switch ($totalZ) {
+            //Si hay menos de 6 Zapatillas el bucle se realiza la cantidad de zapatillas que haya
+            case ($totalZ < 6):
+                $iteraciones = $totalZ;
+                break;
+            //Si hay entre de 6 y 11 Zapatillas el bucle se realiza 6 veces
+            case ($totalZ >= 6 && $totalZ < 12):
+                $iteraciones = 6;
+                break;
+            //Si hay entre de 12 y 17 Zapatillas el bucle se realiza 6 veces
+            case ($totalZ >= 12 && $totalZ < 18):
+                $iteraciones = 12;
+                break;
+                //Si hay entre de 18 y 23 Zapatillas el bucle se realiza 18 veces
+            case ($totalZ >= 18 && $totalZ < 24):
+                $iteraciones = 18;
+                break;
+                //Si hay mas de 24 Zapatillas el bucle se realiza 24 veces
+            default:
+            $iteraciones = 24;
+                break;
+        }
+        for ($j = 0; $j < $iteraciones; $j++){
+            //Si son 12 o 24 iteraciones se va a mostrar 2 mensajes, si vale menos de 12 o 18 se mostrará 1 mensaje
+            if($j == $iteraciones/2 && $iteraciones>6 && ($iteraciones==12 || $iteraciones == 24)){                
+                echo '</div>'; // Cierra el div containerBodyC
+                echo '</div>'; // Cierra el div containerBody
+                echo '<div id="mensaje">';
                     echo '<h5 class="card-title">'.$mensajitos[1].'</h5>';
                 echo '</div>';
                 echo '<hr>';
+                echo'<div class="containerBody">';
+                echo'<div class="containerBodyC">';
             }
             $consulta2 = "SELECT * FROM `Zapatillas` WHERE `IdZapatilla` = ?";
 
@@ -85,7 +117,10 @@ if(count($idValidadas)==0){
             echo'</div>';
             $stmt->close();
         }
-        echo '</div>'; // Cierra el div containerç
+        if($iteraciones>6 && ($iteraciones==12 || $iteraciones == 24)){
+            echo '</div>'; // Cierra el div containerBodyC
+            echo'</div>';// Cierra el div containerBody
+        }
     }
 
 ?>
