@@ -72,10 +72,12 @@
                     <h2>Vuestras ventas</h2>
                     <a href="tienda.php">Ver todo...</a>
                 </div>
-                <div class="shopBody">
-                    <?php
-                        include './php/catalogo.php';
-                    ?>
+                <div class="shopBodyContent">
+                    <div class="shopBody">
+                        <?php
+                            include './php/catalogo.php';
+                        ?>
+                    </div>
                 </div>
             </div>
         </div>
@@ -115,10 +117,12 @@
                     <h2>Sneakers más baratas</h2>
                     <a href="tienda.php">Ver todo...</a>
                 </div>
-                <div class="shopBody">
-                    <?php
-                        include './php/catalogo.php';
-                    ?>
+                <div class="shopBodyContent">
+                    <div class="shopBody">
+                        <?php
+                            include './php/catalogo.php';
+                        ?>
+                    </div>
                 </div>
             </div>
         </div>

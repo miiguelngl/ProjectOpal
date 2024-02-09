@@ -4,6 +4,7 @@
     --principal: #f2f2f2;
     --secundario: #333333;
     --tercer: rgba(91, 133, 217, 1); 
+    --cuarto: #809bbf;
     --letra2: #000000;
     --letra3: rgba(216, 221, 219, 1);
     --exo2: 'Exo 2', sans-serif;
@@ -36,10 +37,9 @@ h5{
 }
 #imgProfile{
     border-radius: 50%;
-    height: 200px;
     width: 200px;
     overflow: hidden;
-    background-color: var(--secundario);
+    background-color: var(--cuarto);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,13 +47,19 @@ h5{
 .ventas{
     margin-left: 18px;
     display: flex;
+    flex-wrap: wrap;
 }
-.card {
+.card, .disabled .card {
     max-width: 200px;
     display: flow;
     max-height: 350px;
     text-align: center;
     overflow: hidden;
+    margin-right: 4px;
+}
+a{
+    margin: none;
+    padding: none;
 }
 .imgContainer {
     width: 200px;
@@ -67,8 +73,15 @@ h5{
     object-fit: cover;
 }
 .caseProfile-Info{
+    width: 100%;
     margin-left: 24px;
 }
+.caseProfileTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ }
+
 .card{
     background-color: transparent !important;
 }
