@@ -19,7 +19,7 @@ try {
     * SMTP username y password Poned los vuestros. La contraseña es la que nos generó GMAIL
     */
     $mail->Username   = 'opalservice@outlook.es';             
-    $mail->Password   = '';    
+    $mail->Password   = 'hmqmvhzqifmwjvls';    
     /*
     * Encriptación a usar ssl o tls, dependiendo cual usemos hay que utilizar uno u otro puerto
     */            
@@ -39,7 +39,7 @@ try {
 //Remitente
     $mail->setFrom('opalservice@outlook.es', 'Opal');
 //Receptores. Podemos añadir más de uno. El segundo argumento es opcional, es el nombre
-    $mail->addAddress('other@gmail.com', '');     //Add a recipient
+    $mail->addAddress('04mangel@gmail.com', 'Miguel');     //Add a recipient
     //$mail->addAddress('ejemplo@example.com'); 
 
     //Copia
@@ -56,11 +56,11 @@ try {
     $mail->isHTML(true);    
     $mail->CharSet = "UTF8";    
     //Asunto
-    $mail->Subject = 'Here is the subject';
+    $mail->Subject = 'Compra realizada';
     //Conteido HTML
-    $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+    $mail->Body    = 'Gracias por confiar en Opal,<br> su pedido será enviado cuanto antes.';
     //Contenido alternativo en texto simple
-    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+    $mail->AltBody = 'Gracias por confiar en Opal, su pedido será enviado cuanto antes.';
     //Enviar correo
     $mail->send();
     echo 'El mensaje se ha enviado con exito';

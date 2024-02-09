@@ -33,19 +33,19 @@
                         <input type="text" id="direccion" name="direccion" placeholder="Dirección de envío..." required>
 
                         <label for="asunto">Código postal:</label>
-                        <input type="number" min="0" pattern="[0-9]{5}" id="direccion" name="direccion" placeholder="CP..." required>
+                        <input type="number" min="0" pattern="[0-9]{5}" id="cp" name="cp" placeholder="CP..." required>
 
                         <label for="descripcion">Observaciones:</label>
-                        <textarea id="descripcion" name="descripcion" rows="4" placeholder="Dejar en recepción, dejarselo al conserje..." required></textarea>
+                        <textarea id="descripcion" name="descripcion" rows="4" placeholder="Dejar en recepción, dejarselo al conserje..."></textarea>
 
                         <div class="form-row">
                             <div class="col">
                                 <label for="asunto">Tarjeta:</label><br>
-                                <input type="number" min="0" pattern="[0-9]{12}" id="direccion" name="direccion" placeholder="Número tarjeta..." required>
+                                <input type="number" min="0" pattern="[0-9]{12}" id="tarjeta" name="tarjeta" placeholder="Número tarjeta..." required>
                             </div>
                             <div class="col">
                                 <label for="asunto">CVV:</label><br>
-                                <input type="number" min="0" pattern="[0-9]{3}" id="direccion" name="direccion" placeholder="CVV..." required>
+                                <input type="number" min="0" pattern="[0-9]{3}" id="cvv" name="cvv" placeholder="CVV..." required>
                             </div>
                         </div>
 
