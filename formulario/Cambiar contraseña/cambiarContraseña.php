@@ -9,13 +9,18 @@
     <script defer src="../../js/validacionContraseña.js"></script>
     <title>Opal</title>
 </head>
+<style>
+    #id{
+        display: none;
+    }
+</style>
 <body>
     <main>
         <div id="formulario">
             <img src="../../img/LogoOpal.png" alt="" height="100px">
             <div class="signin-form">
                 <h2>Cambiar contraseña</h2>
-                <form method="POST" class="register-form" id="login-form" action="signIn.php">
+                <form method="POST" class="register-form" id="login-form" action="cambioContraseña.php">
                     <div class="datosLogIn">
                         <label for="pass"><i class="zmdi zmdi-lock-outline"></i></label>
                         <input type="password" name="pass" id="pass" placeholder="Contraseña nueva"/>
@@ -24,6 +29,12 @@
                         <label for="re-pass"><i class="zmdi zmdi-lock"></i></label>
                         <input type="password" name="re_pass" id="re_pass" placeholder="Repita su contraseña"/>
                     </div>
+                    <?php
+                        if(isset($_GET['id'])){
+                            $p = $_GET['id'];
+                            echo '<input type="number" id="id" name="id" value="'. $p .'">';
+                        }
+                    ?>
                     <div class="form-button">
                         <input type="submit" name="signin" id="signin" class="form-submit" value="Confirmar"/>
                     </div>
