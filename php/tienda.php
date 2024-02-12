@@ -10,12 +10,22 @@ $idValidadas = [];
 $e = 2;
 $condi = "WHERE `Validada` = 1 ";
 
+//Si recibe un parametro get se lo añade a la condición
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['pt'])  && $_GET['pt'] !== null) {
     $condicion = $_GET['pt'];
     $condi .= "AND (`Nombre` LIKE '%$condicion%' OR `MARCA` LIKE '%$condicion%')";
     $e = 1;
 }
-
+//Si tiene un usuario iniciado  NO le muestra su propios productos
+if (isset($_SESSION['Usu']) && $_SESSION['Usu'] !== null) {
+    $apodo = $_SESSION['Usu'];
+    $sql = "SELECT * FROM Usuario WHERE apodo = ?";
+    $consulta = $conexion->prepare($sql);
+    $consulta->bind_param('s', $apodo);
+    $consulta->execute();
+    $resultados = $consulta->get_result()->fetch_all(MYSQLI_ASSOC);
+    $condi .= " AND (`IdUsuario` != {$resultados[0]['IdUsuario']})";
+}
 // for ($i = 1; $i <= $e; $i++) {
     $consulta4 = "SELECT * FROM `Zapatillas` $condi";
     $stmt4 = $conexion->prepare($consulta4);

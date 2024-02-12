@@ -1,28 +1,46 @@
 <?php
-    error_reporting(E_ALL);
-    ini_set('display_errors', '1');
-    include "conexion.php";
+include "conexion.php";
 
-    $columnas = ['Nombre', 'Marca', 'IdZapatilla'];
-    $tabla = 'Zapatillas';
-    $campo = isset($_POST['campo']) ? $conexion->real_escape_string($_POST['campo']) : null;
-    $tecla = isset($_POST['tecla']) ? $conexion->real_escape_string($_POST['tecla']) : null;
+// Verificar si hay una sesión iniciada
+session_start();
 
-    $condicion = '';
+$columnas = ['Nombre', 'Marca', 'IdZapatilla'];
+$tabla = 'Zapatillas';
+$campo = isset($_POST['campo']) ? $conexion->real_escape_string($_POST['campo']) : null;
+$tecla = isset($_POST['tecla']) ? $conexion->real_escape_string($_POST['tecla']) : null;
 
-    if ($campo != '') {
-        $condicion = 'WHERE `Validada` = 1 AND (';
+$condicion = '';
 
-        for ($i = 0; $i < count($columnas); $i++) {
-            $condicion .= $columnas[$i] . " LIKE '%" . $campo . "%' OR ";
-        }
-        $condicion = substr_replace($condicion, "", -3);
-        $condicion .= ")";
+if ($campo != '') {
+    $condicion = ' WHERE `Validada` = 1 AND (';
+
+    for ($i = 0; $i < count($columnas); $i++) {
+        $condicion .= $columnas[$i] . " LIKE '%" . $campo . "%' OR ";
+    }
+    $condicion = substr_replace($condicion, "", -3);
+    $condicion .= ")";
     
+    // Si tiene una sesión iniciada no acceda a sus zapatillas
+    if (isset($_SESSION['Usu']) && $_SESSION['Usu'] !== null) {
+        $apodo = $_SESSION['Usu'];
+        $sql = "SELECT * FROM Usuario WHERE apodo = ?";
+        $consulta = $conexion->prepare($sql);
+        $consulta->bind_param('s', $apodo);
+        $consulta->execute();
+        $resultados = $consulta->get_result()->fetch_all(MYSQLI_ASSOC);
 
-    $consulta = "SELECT " . implode(',', $columnas) . " FROM `$tabla` $condicion";
+        // Verificar si hay resultados antes de acceder al índice 0
+        if (!empty($resultados)) {
+            $condicion .= " AND (`IdUsuario` != {$resultados[0]['IdUsuario']})";
+        }
+    }
 
-    $resultado = $conexion->query($consulta);
+
+$consulta = "SELECT " . implode(',', $columnas) . " FROM `$tabla` $condicion";
+
+$resultado = $conexion->query($consulta);
+
+
 
     $data = array();
 
