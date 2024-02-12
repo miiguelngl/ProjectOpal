@@ -5,7 +5,7 @@
     $id=$_POST["id"];
 
     //Conexion BBDD
-    $servidor = "localhost";
+    $servidor = "opal.c1ocwiak66or.us-east-1.rds.amazonaws.com";
     $username = "OpalAdmin";
     $password = "Yovoyahaceruncorral";
     $base = "Opal";
