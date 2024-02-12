@@ -12,6 +12,7 @@
 
 .container{
     justify-content: space-between;
+    margin-bottom: 32px;
 }
 .card{
     width: 1800px;
