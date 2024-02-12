@@ -18,7 +18,7 @@
         $conexion = new mysqli($servidor, $username, $password, $base);
 
         if($conexion) {
-            $consulta1 = "UPDATE `zapatillas` SET `Validada` = '1' WHERE `zapatillas`.`IdZapatilla` = ?;";
+            $consulta1 = "UPDATE `Zapatillas` SET `Validada` = '1' WHERE `Zapatillas`.`IdZapatilla` = ?;";
             $stmt = $conexion->prepare($consulta1);
             $stmt->bind_param("s", $id);
             $stmt->execute();
