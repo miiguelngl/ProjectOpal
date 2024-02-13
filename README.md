@@ -13,18 +13,14 @@
   - [4.2. Diagrama entidad relacion](#modelo)  						    	  						  
 - [5. Arquitectura de la aplicación]
 (#arquitectura)  
- 				(Falta terminar)		         	   		 
-  - [5.1. Estructura del proyecto](#estructura)  	
-  					(Falta terminar)         		 
-  - [5.2. Recursos externos](#recursos)  		
-  					(Falta terminar)        		  
+ 				         	   		 
+  - [5 Estructura del proyecto](#estructura)  	
+       		  
 - [6. Manual de despliegue](#despliegue)   			
-						(Falta terminar)	 
+			
   - [6.1. Requisitos hardware y software aplicables](#requisitos)  			   		  
-  - [6.2. Instrucciones de despliegue en Linux](#despliegue_linux)   	
-  		 		    (Falta terminar)	 
-  - [6.3. Instrucciones de despliegue en Windows, Mac y en un proveedor en la nube](Fala terminar)(#despliegue_resto)   		  									       
-  - [6.4. Configuración inicial](#configuracion) 
+   			  									       
+
 <a name="introduccion"></a>						     		
 ## 1. Introducción 	
  Consiste en un sitio web de compra-venta de zapatillas de estilo urbano. Los usuarios podrían comprar o vender estos productos en nuestra página web. 
@@ -79,25 +75,27 @@ El motor de bases de datos usado es `MySql`. Las razones de su elección son las
 <a name="diagramas"></a>									  
 ### 4.1. Casos de uso (ajustar al nuestro)
 ![Caso-uso](./img/CU.jpg)
-<a name="modelo"></a>									     	  						    	 
+<a name="modelo"><a>									     	  						 
 ### 4.2. Modelo de dominio 			
 ![Entidad Relacion](./img/ER.png)
-<a name="arquitectura"></a>					   	 
-## 5. Arquitectura de la aplicación  	
-<a name="estructura"></a>					         	   		  
-### 5.1. Estructura del proyecto 
-(falta modificar )
- -NOmbre de cada carpeta y su contenido (nos falta la info)	
-<a name="recursos"></a>					         		  
-### 5.2. Recursos externos 
-En esta aplicación se han usado diversos recursos externos, es decir, librerías y código no escrito por el desarrollador de esta aplicación. Los recursos externos usados son:
-- `Bootstrap`: para el aspecto visual de la aplicación.
-- `Materia like`: iconos para los distintos elementos html.
-- faltan mas carpetas 
+	
+<a name="despliegue"></a>	
+###6. Para desplegar la pagina web y el servidor en AWS se ha tenido que hacer : 
+- 1 Creacion de VPC : Se ha creado una VPC con 2 redes publicas y 2 redes privadas 2 AZ, sin NAT ni S3 Gateway
+![VPC](./img/VPC.png)
+- 2 Creacion de EC2 : AMI Ubuntu contiene el par de claves vockey , esta conectada a la red OPAL subred public1 tiene ip publica y de grupo de seguridad tiene SSH ,hhtp y MySQL/Aurora. Ademas se ha instalado apache2 PHP y MySQL 
+![Instancia1](./img/EC2-1.png)
+![Instancia2](./img/EC2-2.png)
+![Instancia3](./img/EC2-3.png)
+- 3 Creacion de la RDS : 
+Conectividad:
+* No se conecte a un recurso informático EC2
+* Vpac Opal
+* Acceso público: NO
+* Creado nuevo grupo de seguridad: database_SG
+![RDS](./img/RDS.png)
 
-
-<a name="despliegue"></a>							        		 
-## 6. Manual de despliegue
+## 6. Manual de despliegue 
 <a name="requisitos"></a> 										 
 ### 6.1. Requisitos hardware y software aplicables 	
 - Hardware:
@@ -118,29 +116,9 @@ En esta aplicación se han usado diversos recursos externos, es decir, librería
     | :------ |:------:| :-----: | :---: | :----: |
     | Mac     | X      | X       | X     | X      |
     | Windows | X      | X       | X     | -      |
-    | Linux   | X      | X       | X     | -      |
+    | Linux   | X      | X       | X     | -      |		  
 
-<a name="despliegue_linux"></a>	   		  
-### 6.2. Instrucciones de despliegue en Linux  	
-Esta aplicación se despliega mediante AWS EC2". Este sistema usa el kernel de Linux, así que no tendremos ningún problema en desplegarla en este sistema operativo.
  
-Lo primero que debemos hacer es entrar con nuestro usuario de AWS y crea una instancia EC2
-
-CONETARSE CON EL SERVIDOR : 
-De esta forma ya tenemos nuestra aplicación desplegada. Sólo queda conectarse al servidor desde otro equipo que esté en la misma red. Para ello abrimos un navegador y en la barra de navegación escribimos:
-
-    <dirección ip del servidor>:8888
-![Texto alternativo](pegar direccion de imagen de nuestra ip publica de EC2)
-<a name="despliegue_resto"></a>
-### 6.3. Instrucciones de despliegue en Windows, Mac y en un proveedor en la nube
-Habra que conectarse a la maquina EC2 de AWS de Miguel Angel para poder mostrar la app
-<a name="configuracion"></a>
-### 6.4. Configuración inicial 
-Esta aplicación tiene unos datos de inicio que son necesarios para que ciertas acciones
-se puedan llevar a cabo (por ejemplo, autenticarse en la aplicación). Estos datos son como hemos mecionado anteriormente.
-
-Cliente ya registrado: Cliente que ya tenga una cuenta. 
-
-Administrador: Quien se encarga del buen funionamiento de la web .
+;
 	
 				     		  
