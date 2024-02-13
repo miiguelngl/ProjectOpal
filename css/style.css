@@ -21,6 +21,10 @@ nav{
     justify-content: space-around;
     align-items: center;
 }
+nav div{
+    flex: 1;
+    text-align: center;
+}
 
 #buscador {
     background-color: var(--principal);

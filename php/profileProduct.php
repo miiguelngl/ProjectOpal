@@ -36,7 +36,12 @@
                 $stmt3->execute();
     
                 $result3 = $stmt3->get_result();
-    
+                
+                //SI tiene iniciada la sesion y la zapatilla pertene al que tiene la sesion iniciada 
+                if (isset($_SESSION['Usu']) && $_SESSION['Usu'] !== null) {
+
+                }
+
                 if($result3->num_rows > 0) {
                     $arrayFoto = $result3->fetch_array(MYSQLI_ASSOC);
                     $imagenZapa = base64_encode($arrayFoto['Foto']);
