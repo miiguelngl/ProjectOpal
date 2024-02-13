@@ -86,7 +86,7 @@ nav div{
 #cajaBuscador{
     display: none;
 }
-#menu{
+.menu{
     /* background-color: var(--tercer);
     justify-content: space-evenly;
     padding: 8px; */
@@ -251,13 +251,13 @@ footer{
     #header-menu-movil{
         display: none;
     }
-    #menu{
+    .menu{
         background-color: var(--tercer);
         justify-content: space-evenly;
         padding: 8px;
         display: flex;
     }
-    #menu a{
+   .menu a{
         text-decoration: none;
         color: var(--principal);
         font-family: var(--exo2);
