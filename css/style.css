@@ -111,6 +111,7 @@ nav{
 #header-menu-nav.mostrar-menu {
     transform: translateX(0);
     transition: 1s all;
+    z-index: 51;
 }
 
 #header-menu-nav ul {
