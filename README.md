@@ -76,19 +76,12 @@ El motor de bases de datos usado es `MySql`. Las razones de su elección son las
  Hemos seleccionado Bootstrap por su amplia gama de componentes predefinidos, facilita la creación rápida de interfaces atractivas. Su sistema de cuadrícula flexible permite diseños estructurados, asegurando coherencia en diversos dispositivos. La personalización es sencilla, ya que se pueden ajustar estilos y componentes según las necesidades. Ofrece compatibilidad con varios navegadores y su documentación extensa facilita el aprendizaje y solución de problemas. Con una comunidad activa, Bootstrap se actualiza regularmente, garantizando seguridad y mejoras.
 <a name="diseno"></a>						    		  
 ## 4. Diseño de la aplicación 	
-<a name="casos_uso"></a>									  
+<a name="diagramas"></a>									  
 ### 4.1. Casos de uso (ajustar al nuestro)
-![Texto alternativo](web/images/135.jpg)
-![Texto alternativo](web/images/136.jpg)
-![Texto alternativo](web/images/137.jpg)
-![Texto alternativo](web/images/138.jpg)
-![Texto alternativo](web/images/139.jpg)
-![Texto alternativo](web/images/140.jpg)
-![Texto alternativo](web/images/141.jpg)
-![Texto alternativo](web/images/142.jpg)
+![Caso-uso](./img/CU.jpg)
 <a name="modelo"></a>									     	  						    	 
 ### 4.2. Modelo de dominio 			
-![Entidad Relacion](Direccion de Imagen de entidad relacion)
+![Entidad Relacion](./img/ER.png)
 <a name="arquitectura"></a>					   	 
 ## 5. Arquitectura de la aplicación  	
 <a name="estructura"></a>					         	   		  
