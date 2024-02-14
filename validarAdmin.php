@@ -76,7 +76,6 @@ if(isset($_SESSION["Usu"])){
     }else{
         echo("<h4>ERROR 404 NOT FOUND</h4>");
     }
-include './php/footer.php'
 ?>
 </body>
 </html>
