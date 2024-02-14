@@ -18,7 +18,6 @@
     //Comprueba si existe sesion iniciada
     if(isset($_SESSION['Usu'])){
         $Us = $_SESSION['Usu'];
-        $conexion = new mysqli($servidor, $username, $password, $base);
 
         //consulta para saber el IDzapatilla    
         $consulta1 = "SELECT MAX(`IdZapatilla`) FROM `Zapatillas`";
