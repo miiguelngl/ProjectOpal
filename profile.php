@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/productoCase.css">
     <link rel="stylesheet" href="./css/profile.css">
-    <script defer src="js/menuDesplegable.js"></script>
+    <script defer src="./js/menuDesplegable.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script defer src="js/cerrarSesion.js"></script>
+    <script defer src="./js/cerrarSesion.js"></script>
     <title>Opal</title>
 </head>
 <body>
