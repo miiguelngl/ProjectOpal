@@ -12,7 +12,6 @@
     //Comprueba si existe sesion iniciada
     if(isset($_SESSION['Usu'])){
         $Us = $_SESSION['Usu'];
-        $conexion = new mysqli($servidor, $username, $password, $base);
 
         if($conexion) {
             $consulta1 = "DELETE FROM `Fotos` WHERE `IdZapatilla` = ?";

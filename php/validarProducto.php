@@ -11,7 +11,6 @@
     //Comprueba si existe sesion iniciada
     if(isset($_SESSION['Usu'])){
         $Us = $_SESSION['Usu'];
-        $conexion = new mysqli($servidor, $username, $password, $base);
 
         if($conexion) {
             $consulta1 = "UPDATE `Zapatillas` SET `Validada` = '1' WHERE `Zapatillas`.`IdZapatilla` = ?;";
