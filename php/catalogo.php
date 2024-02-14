@@ -49,7 +49,7 @@ if ($resultado) {
         echo '</div>';
             echo '<div class="card-body" alt="...">';
                 echo '<h5 class="card-title">'.$nombre.'</h5>';
-                echo '<p class="card-text">Talla: '.$fila['Talla'].'</p>';
+                echo '<p class="text-dark">Talla: '.$fila['Talla'].'</p>';
                 echo '<p class="card-text" e="'.$fila['IdZapatilla'].'">'.$fila['Precio'].'€</p>';
                 echo '<a href="#" class="card-button">Comprar</a>';
             echo '</div>';
