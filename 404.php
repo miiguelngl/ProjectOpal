@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="css/productoCase.css">
     <script defer src="js/enlaces.js"></script>
     <script defer src="js/menuDesplegable.js"></script>
-    /* Para directivas */
     <link rel="stylesheet" href="../css/normalize.css">
     <link href="../css/carousel.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
