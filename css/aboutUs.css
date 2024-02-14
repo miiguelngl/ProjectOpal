@@ -67,8 +67,8 @@ video {
     justify-content: center; 
     align-items: center;
     width: 90%; 
-    margin-top: 12px;
-    margin-bottom: 12px;
+    margin-top: 16px;
+    margin-bottom: 16px;
 }
 
 #servicios h2, #servicios h3{
@@ -87,7 +87,7 @@ video {
     padding: 12px;
     border-radius: 20px;
     margin-bottom: 36px;
-    width: 350px;
+    width: 300px;
     font-family: var(--karla);
     background-color: var(--tercer);
     color: var(--principal);
@@ -184,5 +184,8 @@ video {
     }
     #textoIzquierda{
         text-align: left;
+    }
+    .serviciosCaseInfo{
+        width: 350px;
     }
 }
