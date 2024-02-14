@@ -98,7 +98,7 @@ nav button{
 
 /* -- MENU DESPLEGABLE -- */
 
-#botonMenu {
+.botonMenu {
     background-color: transparent;
     border: 0px;
 } 
