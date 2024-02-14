@@ -17,7 +17,7 @@
         $us = $_SESSION['Usu'];
 
 
-        $consultaUsuario = "SELECT * FROM `usuario` WHERE `Apodo` = ?";
+        $consultaUsuario = "SELECT * FROM `Usuario` WHERE `Apodo` = ?";
         $stmt = $conexion->prepare($consultaUsuario);
         $stmt->bind_param("s", $us);
         $stmt->execute();
