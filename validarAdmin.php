@@ -36,47 +36,47 @@ if(isset($_SESSION["Usu"])){
         if($array["Admin"] == 1){
             //CONTENIDO DEL ADMIN.PHP
 
-            //MOSTRAR TODAS LAS ZAPATILLAS NO VALIDADAS
+            //MOSTRAR TODOS LOS USUARIO NO VALIDADAS
 
-            $consulta2 = "SELECT * FROM `Zapatillas` WHERE `Validada` = ?";
+            $consulta2 = "SELECT * FROM `Usuario`";
 
             $stmt2 = $conexion->prepare($consulta2);
-            $validada = false;
-            $stmt2->bind_param("i", $validada);
             $stmt2->execute();
             $result2 = $stmt2->get_result();
             if($result2->num_rows > 0){
+                $array2 = $result2->fetch_assoc();
                 //Bucle para cada solicitud
                 echo "<table>";
-                echo "<tr><th>Nombre</th><th>Marca</th><th>Talla</th><th>Precio</th><th>Estado  </th></tr>";
+                echo "<tr><th>IdUsuario</th><th>Nombre</th><th>Correo</th><th>Admin</th><th>Estado</th></tr>";
                 while ($array2 = $result2->fetch_assoc()) {
-                    echo "<tr><td><a href='./producto.php?pt=".$array2['IdZapatilla']."'>".$array2['Nombre']."</a></td><td>".$array2['Marca']."</td><td>".$array2['Talla']."</td><td>".$array2['Precio']."€</td>
+                    echo "<tr><td>".$array2['IdUsuario']."</td><td><p>".$array2['Apodo']."</p></td><td>".$array2['Correo']."</td><td>".$array2['Admin']."</td>
                     <td class='estado'>
-                    <form action='php/validarProducto.php' method='post' enctype='multipart/form-data'>
-                        <input type='number' id='id' name='id' class='d-none' value='".$array2['IdZapatilla']."'>
-                        <input type='submit' id='enviar' class='btn btn-success' value='Validar'>
+                    <form action='php/darAdmin.php' method='post' enctype='multipart/form-data'>
+                        <input type='number' id='id' name='id' class='d-none' value='".$array2['IdUsuario']."'>
+                        <input type='submit' id='enviar' class='btn btn-success' value='Dar Admin'>
                     </form>
-                    <form action='php/eliminarProducto.php' method='post' enctype='multipart/form-data'>
-                        <input type='number' id='id' name='id' class='d-none' value='".$array2['IdZapatilla']."'>
-                        <input type='submit' id='enviar' class='btn btn-danger' value='Eliminar'>
+                    <form action='php/quitarAdmin.php' method='post' enctype='multipart/form-data'>
+                        <input type='number' id='id' name='id' class='d-none' value='".$array2['IdUsuario']."'>
+                        <input type='submit' id='enviar' class='btn btn-danger' value='Quitar Admin'>
                     </form>
                     </td></tr>";
                 }
                 echo "</table>";
-                echo "<nav class='menu'><a href=./validarAdmin.php>Dar Admin a un Usuario</a></nav>";
+                echo "<nav class='menu'><a href=./admin.php>Validar Productos</a></nav>";
             }else{
                 echo "<p style=text-align:center>No hay Solicitudes</p>";
-                echo "<nav class='menu'><a href=./validarAdmin.php>Dar Admin a un Usuario</a></nav>";
+                echo "<nav class='menu'><a href=./admin>Validar Zapatillas</a></nav>";
             }
         }else{
-            echo("<h4>ERROR 404 NOT FOUND<h5>");
+            echo("<h4>ERROR 404 NOT FOUND</h4>");
         }
     }else{
-        echo("<h4>ERROR 404 NOT FOUND<h5>");
+        echo("<h4>ERROR 404 NOT FOUND</h4>");
     }
     }else{
-        echo("<h4>ERROR 404 NOT FOUND<h5>");
+        echo("<h4>ERROR 404 NOT FOUND</h4>");
     }
+include './php/footer.php'
 ?>
 </body>
 </html>
