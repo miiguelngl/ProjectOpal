@@ -8,14 +8,14 @@
     //Conexion BBDD
     include "../../php/conexion.php";
 
-    $consultaUsuario = "SELECT * FROM `usuario` WHERE `Correo` = ?";
+    $consultaUsuario = "SELECT * FROM `Usuario` WHERE `Correo` = ?";
     $stmt = $conexion->prepare($consultaUsuario);
     $stmt->bind_param("s", $id);
     $stmt->execute();
     $resultado = $stmt->get_result();
     if($resultado){
 
-        $consultaCambioContrasena = "UPDATE `usuario` SET `Contrasena` = '$contrasena' WHERE `usuario`.`IdUsuario` = ?";
+        $consultaCambioContrasena = "UPDATE `Usuario` SET `Contrasena` = '$contrasena' WHERE `usuario`.`IdUsuario` = ?";
         $stmt = $conexion->prepare($consultaCambioContrasena);
         $stmt->bind_param("s", $id);
         $stmt->execute();
