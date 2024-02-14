@@ -121,6 +121,7 @@ if(count($idValidadas)==0){
                 echo '</div>';
                 echo '<div class="card-body">';
                     echo '<h5 class="card-title">'.$nombre.'</h5>';
+                    echo '<p id="talla">Talla: '.$resultados['Talla'].'</p>';
                     echo '<p class="card-text" e='."$resultados[IdZapatilla]".'>'.$resultados['Precio'].'€</p>';
                     echo '<a href="#" class="card-button">Comprar</a>';
                 echo '</div>';

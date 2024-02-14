@@ -27,6 +27,11 @@
     font-size: 18px;
     font-weight: 700;
 }
+#talla{
+    font-family: var(--karla);
+    color: var(--secundario);
+    margin-bottom: 2px;
+}
 .card-text{
     font-weight: 600;
     color: var(--tercer);
@@ -172,7 +177,9 @@
         font-weight: 600;
     }
      .shopBodyContent{
-        overflow-y: auto;  
+        overflow-y: auto; 
+        display: flex;
+        justify-content: center; 
     }
      
 }
