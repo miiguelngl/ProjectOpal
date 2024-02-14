@@ -7,7 +7,7 @@
     //Conexion BBDD
     include ("../../php/conexion.php");
 
-    $consultaUsuario = "SELECT * FROM `usuario` WHERE `Correo` = ?";
+    $consultaUsuario = "SELECT * FROM `Usuario` WHERE `Correo` = ?";
     $stmt = $conexion->prepare($consultaUsuario);
     $stmt->bind_param("s", $email);
     $stmt->execute();
