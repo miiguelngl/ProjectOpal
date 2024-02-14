@@ -1,11 +1,12 @@
 table {
     text-align: center;
+    width: 100vw;
 }
 tr th:first-child {
-    text-align: left;
+    text-align: center;
 }
 tr td:first-child {
-    text-align: left;
+    text-align: center;
 }
 tr:nth-child(odd) {
     background-color: powderblue;
@@ -30,4 +31,12 @@ h4{
     font-family: 'Exo 2', sans-serif;
     font-weight: 700;
     font-size: 50px;
+}
+table{
+    margin-right: 10px;
+}
+.estado{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }

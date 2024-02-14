@@ -22,7 +22,7 @@ session_start();
 include"./php/header.php";
 if(isset($_SESSION["Usu"])){
     $idUsu = $_SESSION["Usu"];
-    //Comprobar que la sesion iniciada se Admin
+    //Comprobar que la sesion iniciada sea Admin
     $consulta1 = "SELECT * FROM `Usuario` WHERE `Apodo` =  ?";
     
     $stmt = $conexion->prepare($consulta1);
@@ -51,22 +51,22 @@ if(isset($_SESSION["Usu"])){
                 echo "<tr><th>Nombre</th><th>Marca</th><th>Talla</th><th>Precio</th><th>Estado  </th></tr>";
                 while ($array2 = $result2->fetch_assoc()) {
                     echo "<tr><td><a href='./producto.php?pt=".$array2['IdZapatilla']."'>".$array2['Nombre']."</a></td><td>".$array2['Marca']."</td><td>".$array2['Talla']."</td><td>".$array2['Precio']."€</td>
-                    <td>
+                    <td class='estado'>
                     <form action='php/validarProducto.php' method='post' enctype='multipart/form-data'>
                         <input type='number' id='id' name='id' class='d-none' value='".$array2['IdZapatilla']."'>
-                        <input type='submit' id='enviar' class='btn btn-success' value='VALIDAR'>
+                        <input type='submit' id='enviar' class='btn btn-success' value='Validar'>
                     </form>
                     <form action='php/eliminarProducto.php' method='post' enctype='multipart/form-data'>
                         <input type='number' id='id' name='id' class='d-none' value='".$array2['IdZapatilla']."'>
-                        <input type='submit' id='enviar' class='btn btn-danger' value='ELIMINAR'>
+                        <input type='submit' id='enviar' class='btn btn-danger' value='Eliminar'>
                     </form>
                     </td></tr>";
                 }
                 echo "</table>";
-                echo "<nav class='menu'><a href=#>Dar Admin a un Usuario</a></nav>";
+                echo "<nav class='menu'><a href=./validarAdmin.php>Dar Admin a un Usuario</a></nav>";
             }else{
                 echo "<p style=text-align:center>No hay Solicitudes</p>";
-                echo "<nav class='menu'><a href=#>Dar Admin a un Usuario</a></nav>";
+                echo "<nav class='menu'><a href=./validarAdmin.php>Dar Admin a un Usuario</a></nav>";
             }
         }else{
             echo("<h4>ERROR 404 NOT FOUND<h5>");
