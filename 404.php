@@ -13,7 +13,22 @@
     <link rel="stylesheet" href="css/productoCase.css">
     <script defer src="js/enlaces.js"></script>
     <script defer src="js/menuDesplegable.js"></script>
-    <title>Opal</title>
+    /* Para directivas */
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link href="../css/carousel.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/productoCase.css">
+    <script defer src="../js/enlaces.js"></script>
+    <script defer src="../js/menuDesplegable.js"></script>
+
+    <link rel="stylesheet" href="../../css/normalize.css">
+    <link href="../../css/carousel.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/productoCase.css">
+    <script defer src="../../js/enlaces.js"></script>
+    <script defer src="../../js/menuDesplegable.js"></script>
     <style>
         h2{
             font-family: 'Exo 2', sans-serif;
