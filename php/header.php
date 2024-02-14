@@ -1,7 +1,7 @@
 <header>
         <nav>
             <div id="header-menu-movil">
-                <button class="botonMenu">
+                <button id="botonMenu">
                     <img src="./img/menu.png" alt="Logo de Perfil">
                 </button>
                 <nav id="header-menu-nav">
