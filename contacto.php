@@ -47,7 +47,7 @@
                     </ul>
                 </div>
                 <div id="formularioContacto">
-                    <form action="procesar_formulario.php" method="post" enctype="multipart/form-data">
+                    <form action="index.php" method="post" enctype="multipart/form-data">
                         <label for="correo">Correo:</label>
                         <input type="email" id="correo" name="correo" placeholder="Correo..." required>
 
