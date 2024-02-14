@@ -1,5 +1,5 @@
 <?php
-    $servername = "localhost";          //Nombre del servidor de la base de datos
+    $servername = "opal.c1ocwiak66or.us-east-1.rds.amazonaws.com";          //Nombre del servidor de la base de datos
     $username = "OpalAdmin";            //Nombre de usuario de la base de datos
     $password = "Yovoyahaceruncorral";  //Contraseña de la base de datos Yovoyahaceruncorral
     $bdname = "Opal";                   //Nombre de la base de datos
