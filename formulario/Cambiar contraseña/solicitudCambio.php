@@ -5,7 +5,7 @@
     $email=$_POST["email"];
 
     //Conexion BBDD
-    include "../../php/conexion.php";
+    include ("../../php/conexion.php");
 
     $consultaUsuario = "SELECT * FROM `usuario` WHERE `Correo` = ?";
     $stmt = $conexion->prepare($consultaUsuario);
