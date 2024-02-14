@@ -103,3 +103,9 @@ function crearMensajeInformativo(id, mensaje, color, elementoRelacionado) {
     div.innerHTML = mensaje;
     return div;
 }
+
+let enviar = document.getElementById('enviar');
+
+enviar.addEventListener("onclick", function(){
+    enviar.disabled = true;
+});

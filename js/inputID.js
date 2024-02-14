@@ -8,3 +8,9 @@ const urlParams = new URLSearchParams(query);
 var producto = urlParams.get('pt');
 
 let input = document.getElementById("id").value = producto;
+
+let enviar = document.getElementById('enviar');
+
+enviar.addEventListener("onclick", function(){
+    enviar.disabled = true;
+});

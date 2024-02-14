@@ -85,3 +85,8 @@ function borraMssgError() {
         mssgMostrado.remove();
     }
 }
+let enviar = document.getElementById('enviar');
+
+enviar.addEventListener("onclick", function(){
+    enviar.disabled = true;
+});
