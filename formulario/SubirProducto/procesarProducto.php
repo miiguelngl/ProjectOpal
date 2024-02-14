@@ -11,10 +11,7 @@
     
 
     //Conexion BBDD
-    $servidor = "opal.c1ocwiak66or.us-east-1.rds.amazonaws.com";
-    $username = "OpalAdmin";
-    $password = "Yovoyahaceruncorral";
-    $base = "Opal";
+    include("conexion.php");
 
 
     session_start();
