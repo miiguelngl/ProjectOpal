@@ -11,6 +11,7 @@ if (isset($_SESSION['Usu']) && $_SESSION['Usu'] !== null) {
     $resultados = $consulta->get_result()->fetch_all(MYSQLI_ASSOC);
     $condi .= " AND (`IdUsuario` != {$resultados[0]['IdUsuario']})";
 }
+//Optimizacion fotos:
 
 $consulta1 = "SELECT * FROM `Zapatillas` WHERE `Validada` = 1 " . "$condi";
 $resultado = $conexion->query($consulta1);
@@ -38,8 +39,24 @@ if ($resultado) {
         $consulta3 = "SELECT * FROM `Fotos` WHERE `IdZapatilla` = $idZapatillas[$i]";
         $resultado2 = $conexion->query($consulta3);
         $fila2 = $resultado2->fetch_assoc();
-        
-        $blob = base64_encode($fila2['Foto']);
+        //Optimización Imagenes
+        $blobOriginal = $fila2['Foto'];
+        $imagenOriginal = imagecreatefromstring($blobOriginal);
+        $anchoOriginal = imagesx($imagenOriginal);
+        $altoOriginal = imagesy($imagenOriginal);
+
+        // tamaño imagenes optimizadas
+        $anchoMiniatura = 300; // ajusta según tus necesidades
+        $altoMiniatura = ($altoOriginal / $anchoOriginal) * $anchoMiniatura;
+        $imagenMiniatura = imagecreatetruecolor($anchoMiniatura, $altoMiniatura);
+        // Redimensiona la imagen original a la miniatura
+        imagecopyresampled($imagenMiniatura, $imagenOriginal, 0, 0, 0, 0, $anchoMiniatura, $altoMiniatura, $anchoOriginal, $altoOriginal);
+        // Convierte la miniatura a un blob
+        ob_start();
+        imagejpeg($imagenMiniatura, null, 80); // puedes ajustar la calidad (80 es un buen valor)
+        $blobMiniatura = ob_get_clean();
+        //Pasarla a base64
+        $blob = base64_encode($blobMiniatura);
 
         //El nombre si tiene mas de 17 caracter se corta
         $nombre = (strlen($fila['Nombre']) > 15) ? substr($fila['Nombre'], 0, 14) . '...' : $fila['Nombre'];
