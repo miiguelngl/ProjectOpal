@@ -25,6 +25,9 @@ nav div{
     flex: 1;
     text-align: center;
 }
+nav button{
+    border: none;
+}
 
 #buscador {
     background-color: var(--principal);
