@@ -15,7 +15,7 @@
     $resultado = $stmt->get_result();
     if($resultado){
 
-        $consultaCambioContrasena = "UPDATE `Usuario` SET `Contrasena` = '$contrasena' WHERE `usuario`.`IdUsuario` = ?";
+        $consultaCambioContrasena = "UPDATE `Usuario` SET `Contrasena` = '$contrasena' WHERE `Usuario`.`IdUsuario` = ?";
         $stmt = $conexion->prepare($consultaCambioContrasena);
         $stmt->bind_param("s", $id);
         $stmt->execute();
