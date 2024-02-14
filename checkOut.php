@@ -39,10 +39,11 @@
                         $stmt->execute();
                         if ($sesionIni == $arrayUsu['Apodo']){
 
-                        }else 
+                        }
                     }
                    
                 }
+            }
         ?>
         <div class="container" id="posicionCase">
             <div class="case">

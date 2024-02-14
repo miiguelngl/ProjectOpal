@@ -63,8 +63,10 @@ if(isset($_SESSION["Usu"])){
                     </td></tr>";
                 }
                 echo "</table>";
+                echo "<nav class='menu'><a href=#>Dar Admin a un Usuario</a></nav>";
             }else{
-                echo "No hay Solicitudes";
+                echo "<p style=text-align:center>No hay Solicitudes</p>";
+                echo "<nav class='menu'><a href=#>Dar Admin a un Usuario</a></nav>";
             }
         }else{
             echo("<h4>ERROR 404 NOT FOUND<h5>");
@@ -75,7 +77,7 @@ if(isset($_SESSION["Usu"])){
     }else{
         echo("<h4>ERROR 404 NOT FOUND<h5>");
     }
-
+include './php/footer.php'
 ?>
 </body>
 </html>

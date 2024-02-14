@@ -1,6 +1,18 @@
 <?php
 include("conexion.php");
-$consulta1 = "SELECT * FROM `Zapatillas` WHERE `Validada` = 1 ";
+$condi= "";
+//Si tiene un usuario iniciado  NO le muestra su propios productos
+if (isset($_SESSION['Usu']) && $_SESSION['Usu'] !== null) {
+    $apodo = $_SESSION['Usu'];
+    $sql = "SELECT * FROM Usuario WHERE apodo = ?";
+    $consulta = $conexion->prepare($sql);
+    $consulta->bind_param('s', $apodo);
+    $consulta->execute();
+    $resultados = $consulta->get_result()->fetch_all(MYSQLI_ASSOC);
+    $condi .= " AND (`IdUsuario` != {$resultados[0]['IdUsuario']})";
+}
+
+$consulta1 = "SELECT * FROM `Zapatillas` WHERE `Validada` = 1 " . "$condi";
 $resultado = $conexion->query($consulta1);
 if ($resultado) {
     

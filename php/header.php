@@ -1,7 +1,7 @@
 <header>
         <nav>
             <div id="header-menu-movil">
-                <button id="botonMenu">
+                <button class="botonMenu">
                     <img src="./img/menu.png" alt="Logo de Perfil">
                 </button>
                 <nav id="header-menu-nav">
@@ -60,7 +60,7 @@
                 ?>
             </div>
         </nav>
-        <nav id="menu">
+        <nav class="menu">
             <a href="tienda.php">Tienda</a>
             <a href="subirProducto.php">Subir producto</a>
             <a href="aboutUs.php">Sobre nosotros</a>
