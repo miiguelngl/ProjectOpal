@@ -17,6 +17,33 @@
         include './php/header.php';
     ?>
     <main>
+        <?php
+             if(isset($_GET['pt'])) {
+                $idZ= $_GET['pt'];
+                $consultaUsu = "SELECT * FROM `Zapatilla` WHERE `IdZapatilla` = ?";
+            
+                $stmt2 = $conexion->prepare($consultaUsu);
+                $stmt2->bind_param("s", $idZ);
+                $stmt2->execute();
+
+                $result2 = $stmt2->get_result();
+            
+                if($result2->num_rows == 1) {
+                    $arrayZapa = $result2->fetch_array(MYSQLI_ASSOC);
+                    if (isset($_SESSION['Usu']) && $_SESSION['Usu'] !== null) {
+                        $sesionIni=$_SESSION['Usu'];
+                        $consultaUsu = "SELECT * FROM `Usuario` WHERE `Apodo` = ?";
+
+                        $stmt = $conexion->prepare($consultaUsu);
+                        $stmt->bind_param("s", $sesionIni);
+                        $stmt->execute();
+                        if ($sesionIni == $arrayUsu['Apodo']){
+
+                        }else 
+                    }
+                   
+                }
+        ?>
         <div class="container" id="posicionCase">
             <div class="case">
                 <h4>Realizar compra</h4>

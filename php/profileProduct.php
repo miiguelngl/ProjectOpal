@@ -28,7 +28,6 @@
             
             if($result2->num_rows == 1) {
                 $arrayUsu = $result2->fetch_array(MYSQLI_ASSOC);
-
                 $consultaFoto = "SELECT * FROM `Fotos` WHERE `IdZapatilla` = ?";
 
                 $stmt3 = $conexion->prepare($consultaFoto);
@@ -36,8 +35,13 @@
                 $stmt3->execute();
     
                 $result3 = $stmt3->get_result();
-    
-                if($result3->num_rows > 0) {
+                $sesionIni=null;
+                //SI tiene iniciada la sesion y la zapatilla pertene al que tiene la sesion iniciada 
+                if (isset($_SESSION['Usu']) && $_SESSION['Usu'] !== null) {
+                    $sesionIni=$_SESSION['Usu'];
+                }
+                
+                 if($result3->num_rows > 0) {
                     $arrayFoto = $result3->fetch_array(MYSQLI_ASSOC);
                     $imagenZapa = base64_encode($arrayFoto['Foto']);
                     echo "<div class='container' id='caseCenter'>";
@@ -57,7 +61,13 @@
                                     echo "<h5>".$arrayZapa['Marca']."</h5>";
                                     echo "<h5>Talla: ".$arrayZapa['Talla']."</h5>";
                                     echo "<p>".$arrayZapa['Precio']."€</p>";
-                                    echo "<a href='#' class='card-button'>Comprar</a>";
+                                    //Si la session iniciada es igual al que tiene las zapatillas no podrá comprar la zapatilla
+                                    if($sesionIni == $arrayUsu['Apodo']){
+
+                                    }else{
+                                        echo "<a href='#' class='card-button'>Comprar</a>";
+                                    }
+                                    
                                 echo "</div>";
                             echo "</div>";
                             echo "<hr>";

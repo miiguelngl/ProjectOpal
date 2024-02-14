@@ -36,8 +36,13 @@
                 $stmt3->execute();
     
                 $result3 = $stmt3->get_result();
-    
-                if($result3->num_rows > 0) {
+                //SI tiene iniciada la sesion y la zapatilla pertene al que tiene la sesion iniciada 
+                if (isset($_SESSION['Usu']) && $_SESSION['Usu'] !== null) {
+                    $sesionIni=$_SESSION['Usu'];
+                }
+                if ($sesionIni == $arrayUsu['Apodo']){
+
+                }else if($result3->num_rows > 0) {
                     $arrayFoto = $result3->fetch_array(MYSQLI_ASSOC);
                     $imagenZapa = base64_encode($arrayFoto['Foto']);    
                             echo "<div id='caseProduct'>";
