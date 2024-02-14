@@ -15,7 +15,7 @@
     //Comprueba si existe sesion iniciada
     if(isset($_SESSION['Usu'])){
         $us = $_SESSION['Usu'];
-        $conexion = new mysqli($servidor, $username, $password, $base);
+
 
         $consultaUsuario = "SELECT * FROM `usuario` WHERE `Apodo` = ?";
         $stmt = $conexion->prepare($consultaUsuario);
