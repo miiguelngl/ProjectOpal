@@ -172,7 +172,9 @@
         font-weight: 600;
     }
      .shopBodyContent{
-        overflow-y: auto;  
+        overflow-y: auto; 
+        display: flex;
+        justify-content: center; 
     }
      
 }

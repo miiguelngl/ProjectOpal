@@ -54,7 +54,7 @@
             //Asunto
             $mail->Subject = 'Solicitud cambio contraseña';
             //Conteido HTML
-            $mail->Body    = '<h3>Hola '. $nombre .' solicitaste un cambio de contraseña</h3><h4><a href="http://localhost/ProjectOpal/formulario/Cambiar%20contraseña/cambiarContraseña.php?id='. $id .'">Cambiar contraseña</a></h4>';
+            $mail->Body    = '<h3>Hola '. $nombre .' solicitaste un cambio de contraseña</h3><h4><a href="http://' . $_SERVER['HTTP_HOST'] . '/formulario/Cambiar%20contraseña/cambiarContraseña.php?id='. $id .'">Cambiar contraseña</a></h4>';
             //Contenido alternativo en texto simple
             $mail->AltBody = '';
             //Enviar correo
