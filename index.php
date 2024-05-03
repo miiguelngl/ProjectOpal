@@ -15,7 +15,6 @@
     <title>Opal</title>
 </head>
 <body>
-    
    <?php
         include './php/header.php';
     ?>
